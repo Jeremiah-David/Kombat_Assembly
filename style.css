@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+
+body {
+    background-image: url(images/cyberpunk-street.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+h1 {
+    font-family: 'Special Elite', cursive;
+    text-align: center;
+    color:antiquewhite;  
+    font-size: 45px;
+    
+}
