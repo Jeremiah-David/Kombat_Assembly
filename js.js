@@ -16,7 +16,7 @@ let health1image =document.querySelector(".p1Health")
 let p1bar = "/home/jj/Desktop/general_assembly/FightTurn!/images/healthbar.png"
 const p2Stand = "/home/jj/Desktop/general_assembly/FightTurn!/images/p1stand.jpg";
 let player2Sprite =document.getElementById("p2Sprite");
-let health11image =document.querySelector(".p1Health")
+let health1img =document.querySelector(".p1Healthimg")
 let health2img =document.querySelector(".p2Healthimg")
 let p2bar = "/home/jj/Desktop/general_assembly/FightTurn!/images/healthbar.png"
 // let p1A1 = document.querySelector("#p1a1button") 
@@ -118,32 +118,19 @@ p2a4but.addEventListener("click", (e) => {
 fightb.addEventListener("click", 
 () => {
     if (player1Attack == player2Attack) {
-        console.log("Tie!");
+        console.log("Block");
     } else if (player1Attack == 0 && player2Attack == 1 ||player1Attack == 0 && player2Attack == 2)  {
         p2Health = p2Health-25 
-        console.log("playeronewins")
-        console.log(p2Health)
+        
         p2healhb ()
         p1healhb ()
-    } else if (player1Attack == 0 && player2Attack == 3) {
-        console.log ("Block!")
-        //p1a2
-    } else if (player1Attack == 1 && player2Attack == 2 ||player1Attack == 1 && player2Attack == 3)  {
-        console.log("playeronewins")
-    } else if (player1Attack == 1 && player2Attack == 0) {
-        console.log ("Block!")
-        //p1a3
-    } else if (player1Attack == 2 && player2Attack == 3 ||player1Attack == 1 && player2Attack == 0)  {
-        console.log("playeronewins")
-    } else if (player1Attack == 2 && player2Attack == 1) {
-        console.log ("Block!")
-        //p1a4
-    } else if (player1Attack == 3 && player2Attack == 0 ||player1Attack == 3 && player2Attack == 1)  {
-        console.log("playeronewins")
-    } else if (player1Attack == 3 && player2Attack == 2) 
-    console.log ("Block!") 
+    } else if (player1Attack == 0 && player1Attack == 3 ||player2Attack == 0 && player1Attack == 4)  {
+        p2Health = p2Health-25 
+        p2healhb ()
+        p1healhb ()
+    } 
     
-    
+} else if (player1Attack == 3 && player2Attack == 0 player1Attack == 3 && player2Attack == 1)  {
     
 })
 
