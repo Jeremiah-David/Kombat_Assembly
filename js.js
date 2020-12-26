@@ -111,7 +111,28 @@ fightb.addEventListener("click",
     () => {
         if (player1Attack == player2Attack) {
             console.log("Tie!");
-        }
+        } else if (player1Attack == 0 && player2Attack == 1 ||player1Attack == 0 && player2Attack == 2)  {
+            console.log("playeronewins")
+        } else if (player1Attack == 0 && player2Attack == 3) {
+            console.log ("Block!")
+            //p1a2
+        } else if (player1Attack == 1 && player2Attack == 2 ||player1Attack == 1 && player2Attack == 3)  {
+            console.log("playeronewins")
+        } else if (player1Attack == 1 && player2Attack == 0) {
+            console.log ("Block!")
+            //p1a3
+        } else if (player1Attack == 2 && player2Attack == 3 ||player1Attack == 1 && player2Attack == 0)  {
+            console.log("playeronewins")
+        } else if (player1Attack == 2 && player2Attack == 1) {
+            console.log ("Block!")
+            //p1a4
+        } else if (player1Attack == 3 && player2Attack == 0 ||player1Attack == 3 && player2Attack == 1)  {
+            console.log("playeronewins")
+        } else if (player1Attack == 3 && player2Attack == 2) 
+            console.log ("Block!") 
+
+    
+    
     })
 
 
