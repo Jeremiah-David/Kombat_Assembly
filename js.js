@@ -17,7 +17,7 @@ let p1bar = "/home/jj/Desktop/general_assembly/FightTurn!/images/healthbar.png"
 const p2Stand = "/home/jj/Desktop/general_assembly/FightTurn!/images/p1stand.jpg";
 let player2Sprite =document.getElementById("p2Sprite");
 let health11image =document.querySelector(".p1Health")
-let health21image =document.querySelector(".p2Health")
+let health2img =document.querySelector(".p2Healthimg")
 let p2bar = "/home/jj/Desktop/general_assembly/FightTurn!/images/healthbar.png"
 // let p1A1 = document.querySelector("#p1a1button") 
 //my buttons player 1
@@ -42,29 +42,37 @@ let p2A4img =  "/home/jj/Desktop/general_assembly/FightTurn!/images/p1mid.png"
 let p2a4but = document.querySelector("#p2a4button")
 // Fight button!!!
 let fightb = document.querySelector(".fightb")
+// Health
+let p1Health = 100
+let p2Health = 100
+let health100 = "images/fullheart.jpg"
+let health75 = "images/2heart.jpg"
+let health50 = "images/halfheart.jpg"
+let health25 = "images/almostdead.jpg"
+let health0 = "images/deadheart.jpg" 
 
-let Health = 100;
 // // create characters
 
 
 let player1 = {
     sprite: player1Sprite,
-    healthbar: health11image,
+    healthbar: health100,
     health: 100,
 }
 
 let player2 = {
     sprite: player2Sprite,
-    healthbar: health21image,
-    health: 100,
+    healthbar2: health2img,
+    p2Health: 100,
 }
 function test () {
     player1Sprite.src = p1Stand
-    health11image.src = p1bar
+   
     player2Sprite.src = p2Stand
-    health21image.src = p2bar
+    // health21image.src = p2bar
   console.log(player1)
 }
+
 
 
 p1a1but.addEventListener("click", (e) => {
@@ -108,32 +116,64 @@ p2a4but.addEventListener("click", (e) => {
 })
 
 fightb.addEventListener("click", 
-    () => {
-        if (player1Attack == player2Attack) {
-            console.log("Tie!");
-        } else if (player1Attack == 0 && player2Attack == 1 ||player1Attack == 0 && player2Attack == 2)  {
-            console.log("playeronewins")
-        } else if (player1Attack == 0 && player2Attack == 3) {
-            console.log ("Block!")
-            //p1a2
-        } else if (player1Attack == 1 && player2Attack == 2 ||player1Attack == 1 && player2Attack == 3)  {
-            console.log("playeronewins")
-        } else if (player1Attack == 1 && player2Attack == 0) {
-            console.log ("Block!")
-            //p1a3
-        } else if (player1Attack == 2 && player2Attack == 3 ||player1Attack == 1 && player2Attack == 0)  {
-            console.log("playeronewins")
-        } else if (player1Attack == 2 && player2Attack == 1) {
-            console.log ("Block!")
-            //p1a4
-        } else if (player1Attack == 3 && player2Attack == 0 ||player1Attack == 3 && player2Attack == 1)  {
-            console.log("playeronewins")
-        } else if (player1Attack == 3 && player2Attack == 2) 
-            console.log ("Block!") 
+() => {
+    if (player1Attack == player2Attack) {
+        console.log("Tie!");
+    } else if (player1Attack == 0 && player2Attack == 1 ||player1Attack == 0 && player2Attack == 2)  {
+        p2Health = p2Health-25 
+        console.log("playeronewins")
+        console.log(p2Health)
+        p2healhb ()
+        p1healhb ()
+    } else if (player1Attack == 0 && player2Attack == 3) {
+        console.log ("Block!")
+        //p1a2
+    } else if (player1Attack == 1 && player2Attack == 2 ||player1Attack == 1 && player2Attack == 3)  {
+        console.log("playeronewins")
+    } else if (player1Attack == 1 && player2Attack == 0) {
+        console.log ("Block!")
+        //p1a3
+    } else if (player1Attack == 2 && player2Attack == 3 ||player1Attack == 1 && player2Attack == 0)  {
+        console.log("playeronewins")
+    } else if (player1Attack == 2 && player2Attack == 1) {
+        console.log ("Block!")
+        //p1a4
+    } else if (player1Attack == 3 && player2Attack == 0 ||player1Attack == 3 && player2Attack == 1)  {
+        console.log("playeronewins")
+    } else if (player1Attack == 3 && player2Attack == 2) 
+    console.log ("Block!") 
+    
+    
+    
+})
 
-    
-    
-    })
+function p2healhb () {
+    if (p2Health == 75) { 
+    health2img.src = health75
+    console.log("Healthbarworks")
+    } else if (p2Health == 50) {
+        health2img.src = health50
+    } else if (p2Health == 25) {
+        health2img.src = health25
+        console.log("healthat25")
+    } else if (p2Health == 0) {
+        health2img.src = health0
+    }}
+
+function p1healhb () {
+    if (p1Health == 75) { 
+    health1img.src = health75
+    console.log("Healthbarworks")
+    } else if (p1Health == 50) {
+        health1img.src = health50
+    } else if (p1Health == 25) {
+        health1img.src = health25
+        console.log("healthat25")
+    } else if (p1Health == 0) {
+        health1img.src = health0
+    }}
+
+
 
 
 
