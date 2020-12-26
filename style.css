@@ -27,6 +27,7 @@ h1 {
     color:antiquewhite;  
     font-size: 45px;
     
+    
 }
 
 .Title {
@@ -36,16 +37,29 @@ h1 {
 
 .player1Health {
     grid-area: p1health;
+    border: azure;
+    border-radius: 10%;
+    border-width: 10px;
+    border-style: double;
 }
 .player2Health {
     grid-area: p2health;
+    border: azure;
+    border-radius: 10%;
+    border-width: 10px;
+    border-style: double;
 }
 .fight {
     grid-area: fight;
+    border: azure;
+    border-radius: 10%;
+    border-width: 10px;
+    border-style: double;
 }
 .player1Sprite {
     grid-area: p1sprite;
     align-items: center;
+    
 }
 .player2Sprite {
     grid-area: p2sprite;

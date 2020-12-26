@@ -29,7 +29,8 @@ let p1A3img = "/home/jj/Desktop/general_assembly/FightTurn!/images/p1mid.png"
 let p1a3but = document.querySelector("#p1a3button")
 let p1A4img =  "/home/jj/Desktop/general_assembly/FightTurn!/images/p1mid.png"
 let p1a4but = document.querySelector("#p1a4button")
-
+let p1A5img =  "/home/jj/Desktop/general_assembly/FightTurn!/images/p1mid.png"
+let p1a5but = document.querySelector("#p1a5button")
 //player 2 buttons
 
 let p2A1img = "/home/jj/Desktop/general_assembly/FightTurn!/images/p1mid.png"
@@ -40,6 +41,8 @@ let p2A3img = "/home/jj/Desktop/general_assembly/FightTurn!/images/p1mid.png"
 let p2a3but = document.querySelector("#p2a3button")
 let p2A4img =  "/home/jj/Desktop/general_assembly/FightTurn!/images/p1mid.png"
 let p2a4but = document.querySelector("#p2a4button")
+let p2A5img =  "/home/jj/Desktop/general_assembly/FightTurn!/images/p1mid.png"
+let p2a5but = document.querySelector("#p2a5button")
 // Fight button!!!
 let fightb = document.querySelector(".fightb")
 // Health
@@ -95,6 +98,11 @@ p1a4but.addEventListener("click", (e) => {
     player1Sprite.src = p1A1img
 })
 
+p1a5but.addEventListener("click", (e) => {
+    player1Attack = p1a5but.getAttribute("data-value")
+    player1Sprite.src = p1A1img
+})
+
 p2a1but.addEventListener("click", (e) => {
     player2Attack = p2a1but.getAttribute("data-value")
     player2Sprite.src = p1A1img
@@ -114,7 +122,10 @@ p2a4but.addEventListener("click", (e) => {
     player2Attack = p2a4but.getAttribute("data-value")
     player2Sprite.src = p1A1img
 })
-
+p2a5but.addEventListener("click", (e) => {
+    player2Attack = p2a5but.getAttribute("data-value")
+    player2Sprite.src = p1A5img
+})
 fightb.addEventListener("click", 
 () => {
     if (player1Attack == player2Attack) {
@@ -124,14 +135,43 @@ fightb.addEventListener("click",
         
         p2healhb ()
         p1healhb ()
-    } else if (player1Attack == 0 && player1Attack == 3 ||player2Attack == 0 && player1Attack == 4)  {
+    } else if (player1Attack == 0 && player2Attack == 3 ||player1Attack == 0 && player2Attack == 4)  {
+        p1Health = p1Health-25 
+        p2healhb ()
+        p1healhb ()
+    } else if (player1Attack == 1 && player2Attack == 2 ||player1Attack == 1 && player2Attack == 3)  {
         p2Health = p2Health-25 
         p2healhb ()
         p1healhb ()
-    } 
-    
-} else if (player1Attack == 3 && player2Attack == 0 player1Attack == 3 && player2Attack == 1)  {
-    
+    } else if (player1Attack == 1 && player2Attack == 4 ||player1Attack == 0 && player2Attack == 0)  {
+        p1Health = p1Health-25 
+        p2healhb ()
+        p1healhb ()
+    } else if (player1Attack == 2 && player2Attack == 3 ||player1Attack == 2 && player2Attack == 4)  {
+        p2Health = p2Health-25 
+        p2healhb ()
+        p1healhb ()
+    } else if (player1Attack == 2 && player2Attack == 0 ||player1Attack == 2 && player2Attack == 1)  {
+        p1Health = p1Health-25 
+        p2healhb ()
+        p1healhb ()
+    } else if (player1Attack == 3 && player2Attack == 4 ||player1Attack == 3 && player2Attack == 0)  {
+        p2Health = p2Health-25 
+        p2healhb ()
+        p1healhb ()
+    } else if (player1Attack == 3 && player2Attack == 1 ||player1Attack == 3 && player2Attack == 2)  {
+        p1Health = p1Health-25 
+        p2healhb ()
+        p1healhb ()
+    } else if (player1Attack == 4 && player2Attack == 0 ||player1Attack == 4 && player2Attack == 1)  {
+        p2Health = p2Health-25 
+        p2healhb ()
+        p1healhb ()
+    } else if (player1Attack == 4 && player2Attack == 2 ||player1Attack == 4 && player2Attack == 3)  {
+        p1Health = p1Health-25 
+        p2healhb ()
+        p1healhb ()
+    }
 })
 
 function p2healhb () {
@@ -150,7 +190,7 @@ function p2healhb () {
 function p1healhb () {
     if (p1Health == 75) { 
     health1img.src = health75
-    console.log("Healthbarworks")
+    console.log("player1Healthbarworks")
     } else if (p1Health == 50) {
         health1img.src = health50
     } else if (p1Health == 25) {
