@@ -148,7 +148,7 @@ fightb.addEventListener("click",
         p2Health = p2Health-25 
         p2healhb ()
         p1healhb ()
-    } else if (player1Attack == 1 && player2Attack == 4 ||player1Attack == 0 && player2Attack == 0)  {
+    } else if (player1Attack == 1 && player2Attack == 4 ||player1Attack == 1 && player2Attack == 0)  {
         p1Health = p1Health-25 
         p2healhb ()
         p1healhb ()
@@ -157,6 +157,7 @@ fightb.addEventListener("click",
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 2 && player2Attack == 0 ||player1Attack == 2 && player2Attack == 1)  {
+        console.log ("workds")
         p1Health = p1Health-25 
         p2healhb ()
         p1healhb ()
