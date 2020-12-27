@@ -54,6 +54,11 @@ let health50 = "images/halfheart.jpg"
 let health25 = "images/almostdead.jpg"
 let health0 = "images/deadheart.jpg" 
 
+
+// Win Screen
+let winScreen = document.querySelector(".winner")
+let p1WIN = "images/p1wins.jpg"
+let p2WIN = "images/player2wins.jpeg"
 // // create characters
 
 
@@ -185,6 +190,7 @@ function p2healhb () {
         console.log("healthat25")
     } else if (p2Health == 0) {
         health2img.src = health0
+        winScreen.src = p1WIN
     }}
 
 function p1healhb () {
@@ -198,9 +204,8 @@ function p1healhb () {
         console.log("healthat25")
     } else if (p1Health == 0) {
         health1img.src = health0
+        winScreen.src = p2WIN
     }}
-
-
 
 
 

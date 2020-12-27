@@ -10,9 +10,9 @@ body {
     grid-template-rows: 150px 100px 300px 200px;
     grid-template-columns: 400px 300px 400px 200px;
     grid-template-areas:     
-    "title       title       title         inst"
-    "p1health    fight       p2health      inst"
-    "p1controls  fight      p2controls     inst"
+    "p1health    title       p2health      inst"
+    "p1controls  fight     p2controls      inst"
+    "p1sprite    fight       p2sprite      inst"
     "p1sprite    fight       p2sprite      inst";
 
     
@@ -33,6 +33,10 @@ h1 {
 .Title {
     grid-area: title;
     align-items: center;
+    border: azure;
+    border-radius: 10%;
+    border-width: 10px;
+    border-style: double;
 }
 
 .player1Health {
@@ -59,17 +63,33 @@ h1 {
 .player1Sprite {
     grid-area: p1sprite;
     align-items: center;
+    border: azure;
+    border-radius: 10%;
+    border-width: 10px;
+    border-style: groove;
     
 }
 .player2Sprite {
     grid-area: p2sprite;
     align-items: center;
+    border: azure;
+    border-radius: 10%;
+    border-width: 10px;
+    border-style: groove;
 }
 .p1controls {
     grid-area: p1controls;
+    border: azure;
+    border-radius: 5%;
+    border-width: 10px;
+    border-style: groove;
 }
 .p2controls {
     grid-area: p2controls;
+    border: azure;
+    border-radius: 5%;
+    border-width: 10px;
+    border-style: groove;
 }
 .inst {
     grid-area: inst;
