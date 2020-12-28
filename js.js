@@ -14,7 +14,7 @@ const p1Stand = "images/cat/catmoew.txt";
 let player1Sprite =document.getElementById("p1Sprite");
 let health1image =document.querySelector(".p1Health")
 let p1bar = "/home/jj/Desktop/general_assembly/FightTurn!/images/healthbar.png"
-const p2Stand = "/home/jj/Desktop/general_assembly/FightTurn!/images/p1stand.jpg";
+const p2Stand = "images/Chunlie/chunstanding.gif";
 let player2Sprite =document.getElementById("p2Sprite");
 let health1img =document.querySelector(".p1Healthimg")
 let health2img =document.querySelector(".p2Healthimg")
@@ -34,15 +34,15 @@ let p1a5but = document.querySelector("#p1a5button")
 let p1wineSprite = "images/cat/feliciawin.gif"
 //player 2 buttons
 
-let p2A1img = "/home/jj/Desktop/general_assembly/FightTurn!/images/p1mid.png"
+let p2A1img = "images/Chunlie/chunball2.gif"
 let p2a1but = document.querySelector("#p2a1button")
-let p2A2img =  "/home/jj/Desktop/general_assembly/FightTurn!/images/p1mid.png"
+let p2A2img =  "images/Chunlie/chunfireball4.gif"
 let p2a2but = document.querySelector("#p2a2button")
-let p2A3img = "/home/jj/Desktop/general_assembly/FightTurn!/images/p1mid.png"
+let p2A3img = "images/Chunlie/chungGun3.gif"
 let p2a3but = document.querySelector("#p2a3button")
-let p2A4img =  "/home/jj/Desktop/general_assembly/FightTurn!/images/p1mid.png"
+let p2A4img =  "images/Chunlie/chunli-gem-stomp.gif"
 let p2a4but = document.querySelector("#p2a4button")
-let p2A5img =  "/home/jj/Desktop/general_assembly/FightTurn!/images/p1mid.png"
+let p2A5img =  "images/Chunlie/chunSpin1.gif"
 let p2a5but = document.querySelector("#p2a5button")
 // Fight button!!!
 let fightb = document.querySelector(".fightb")
