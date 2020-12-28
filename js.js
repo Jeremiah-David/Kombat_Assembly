@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // // // let sprite =document.querySelector(".sprite")
 // let playerPic = document.querySelector(".whoTurn");
 // let p1SpriteStart = document.querySelector(".sprite1");
-const p1Stand = "images/cat/dc3la3a-70c208ac-14f1-4e5f-95d5-492374869265.gif";
+const p1Stand = "images/cat/catmoew.txt";
 let player1Sprite =document.getElementById("p1Sprite");
 let health1image =document.querySelector(".p1Health")
 let p1bar = "/home/jj/Desktop/general_assembly/FightTurn!/images/healthbar.png"
@@ -29,7 +29,7 @@ let p1A3img = "images/cat/felicia-megaman.gif"
 let p1a3but = document.querySelector("#p1a3button")
 let p1A4img =  "images/cat/felicia-rolling.gif"
 let p1a4but = document.querySelector("#p1a4button")
-let p1A5img =  "/home/jj/Desktop/general_assembly/FightTurn!/images/p1mid.png"
+let p1A5img =  "images/cat/multicat.gif"
 let p1a5but = document.querySelector("#p1a5button")
 let p1wineSprite = "images/cat/feliciawin.gif"
 //player 2 buttons
