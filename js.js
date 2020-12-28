@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // // // let sprite =document.querySelector(".sprite")
 // let playerPic = document.querySelector(".whoTurn");
 // let p1SpriteStart = document.querySelector(".sprite1");
-const p1Stand = "/home/jj/Desktop/general_assembly/FightTurn!/images/p1stand.jpg";
+const p1Stand = "images/cat/dc3la3a-70c208ac-14f1-4e5f-95d5-492374869265.gif";
 let player1Sprite =document.getElementById("p1Sprite");
 let health1image =document.querySelector(".p1Health")
 let p1bar = "/home/jj/Desktop/general_assembly/FightTurn!/images/healthbar.png"
@@ -21,16 +21,17 @@ let health2img =document.querySelector(".p2Healthimg")
 let p2bar = "/home/jj/Desktop/general_assembly/FightTurn!/images/healthbar.png"
 // let p1A1 = document.querySelector("#p1a1button") 
 //my buttons player 1
-let p1A1img = "/home/jj/Desktop/general_assembly/FightTurn!/images/p1mid.png"
+let p1A1img = "images/cat/felicia-gem-specialcombo4.gif"
 let p1a1but = document.querySelector("#p1a1button")
-let p1A2img =  "/home/jj/Desktop/general_assembly/FightTurn!/images/p1mid.png"
+let p1A2img =  "images/cat/felicia-goldhammer.gif"
 let p1a2but = document.querySelector("#p1a2button")
-let p1A3img = "/home/jj/Desktop/general_assembly/FightTurn!/images/p1mid.png"
+let p1A3img = "images/cat/felicia-megaman.gif"
 let p1a3but = document.querySelector("#p1a3button")
-let p1A4img =  "/home/jj/Desktop/general_assembly/FightTurn!/images/p1mid.png"
+let p1A4img =  "images/cat/felicia-rolling.gif"
 let p1a4but = document.querySelector("#p1a4button")
 let p1A5img =  "/home/jj/Desktop/general_assembly/FightTurn!/images/p1mid.png"
 let p1a5but = document.querySelector("#p1a5button")
+let p1wineSprite = "images/cat/feliciawin.gif"
 //player 2 buttons
 
 let p2A1img = "/home/jj/Desktop/general_assembly/FightTurn!/images/p1mid.png"
@@ -90,46 +91,46 @@ p1a1but.addEventListener("click", (e) => {
 
 p1a2but.addEventListener("click", (e) => {
     player1Attack = p1a2but.getAttribute("data-value")
-    player1Sprite.src = p1A1img
+    player1Sprite.src = p1A2img
 })
 
 p1a3but.addEventListener("click", (e) => {
     player1Attack = p1a3but.getAttribute("data-value")
-    player1Sprite.src = p1A1img
+    player1Sprite.src = p1A3img
 })
 
 p1a4but.addEventListener("click", (e) => {
     player1Attack = p1a4but.getAttribute("data-value")
-    player1Sprite.src = p1A1img
+    player1Sprite.src = p1A4img
 })
 
 p1a5but.addEventListener("click", (e) => {
     player1Attack = p1a5but.getAttribute("data-value")
-    player1Sprite.src = p1A1img
+    player1Sprite.src = p1A5img
 })
 
 p2a1but.addEventListener("click", (e) => {
     player2Attack = p2a1but.getAttribute("data-value")
-    player2Sprite.src = p1A1img
+    player2Sprite.src = p2A1img
 })
 
 p2a2but.addEventListener("click", (e) => {
     player2Attack = p2a2but.getAttribute("data-value")
-    player2Sprite.src = p1A1img
+    player2Sprite.src = p2A2img
 })
 
 p2a3but.addEventListener("click", (e) => {
     player2Attack = p2a3but.getAttribute("data-value")
-    player2Sprite.src = p1A1img
+    player2Sprite.src = p2A3img
 })
 
 p2a4but.addEventListener("click", (e) => {
     player2Attack = p2a4but.getAttribute("data-value")
-    player2Sprite.src = p1A1img
+    player2Sprite.src = p2A4img
 })
 p2a5but.addEventListener("click", (e) => {
     player2Attack = p2a5but.getAttribute("data-value")
-    player2Sprite.src = p1A5img
+    player2Sprite.src = p2A5img
 })
 fightb.addEventListener("click", 
 () => {
@@ -192,6 +193,7 @@ function p2healhb () {
     } else if (p2Health == 0) {
         health2img.src = health0
         winScreen.src = p1WIN
+        player1Sprite.src = p1wineSprite
     }}
 
 function p1healhb () {

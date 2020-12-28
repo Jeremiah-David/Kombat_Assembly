@@ -63,10 +63,16 @@ h1 {
 .player1Sprite {
     grid-area: p1sprite;
     align-items: center;
-    border: azure;
+    /* border: azure;
     border-radius: 10%;
     border-width: 10px;
     border-style: groove;
+    border-style: groove;
+    background-color: rgba(000, 000, 000, .1);
+    background-size: 400px;
+    size: 400px; */
+    width: 400px;
+    height: 400px;
     
 }
 .player2Sprite {
@@ -76,6 +82,8 @@ h1 {
     border-radius: 10%;
     border-width: 10px;
     border-style: groove;
+    background-color: rgba(000, 000, 000, .1);
+    background-size: 400px;
 }
 .p1controls {
     grid-area: p1controls;
@@ -93,4 +101,8 @@ h1 {
 }
 .inst {
     grid-area: inst;
+}
+.sprite {
+    height: 100%;
+    width: 100%;
 }
