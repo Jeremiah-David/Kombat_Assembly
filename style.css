@@ -14,17 +14,21 @@ body {
     grid-template-areas:     
     "text1 p1health    title       p2health      inst"
     "text1 p1controls  fight     p2controls      inst"
-    "text1 p1sprite    fight       p2sprite      inst"
-    "text1 p1sprite    fight       p2sprite      inst";
+    "text1 p1sprite    status      p2sprite      inst"
+    "text1 p1sprite    status       p2sprite     inst";
 
     
-    background-image: url(images/darkback1.gif);
+    background-image: url(images/animated-gifs-of-fighting-game-backgrounds-46.gif);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .text1 {
     grid-area: text1;
+}
+
+.status {
+    grid-area: status;
 }
 
 h1 {
@@ -93,6 +97,7 @@ h1 {
     background-size: 400px;
     width: 300px;
     height: 300px;
+    vertical-align: bottom;
 }
 .p1controls {
     grid-area: p1controls;

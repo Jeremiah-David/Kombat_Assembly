@@ -62,8 +62,17 @@ let health50 = "images/halfheart.jpg"
 let health25 = "images/almostdead.jpg"
 let health0 = "images/deadheart.jpg" 
 
-// ?? debugger
+//animation stop
 let p1aa1
+let p1aa2
+let p1aa3
+let p1aa4
+let p1aa5
+let p2aa1
+let p2aa2
+let p2aa3
+let p2aa4
+let p2aa5
 
 // Win Screen
 let winScreen = document.querySelector(".winner")
@@ -103,108 +112,131 @@ p1a1but.addEventListener("click", (e) => {
 p1a2but.addEventListener("click", (e) => {
     player1Attack = p1a2but.getAttribute("data-value")
     player1Sprite.src = p1A2img
-    setTimeout(p1returnNormal,1500);
+    p1aa2 = setTimeout(p1returnNormal,1500);
 })
 
 p1a3but.addEventListener("click", (e) => {
     player1Attack = p1a3but.getAttribute("data-value")
     player1Sprite.src = p1A3img
-    setTimeout(p1returnNormal,1800);
+    p1aa3 = setTimeout(p1returnNormal,2500);
 })
 
 p1a4but.addEventListener("click", (e) => {
     player1Attack = p1a4but.getAttribute("data-value")
     player1Sprite.src = p1A4img
-    setTimeout(p1returnNormal,4000);
+    p1aa4 = setTimeout(p1returnNormal,4000);
 })
 
 p1a5but.addEventListener("click", (e) => {
     player1Attack = p1a5but.getAttribute("data-value")
     player1Sprite.src = p1A5img
-    setTimeout(p1returnNormal,3500);
+    p1aa5 = setTimeout(p1returnNormal,3500);
 })
 
 p2a1but.addEventListener("click", (e) => {
     player2Attack = p2a1but.getAttribute("data-value")
     player2Sprite.src = p2A1img
-    setTimeout(p2returnNormal,4000);
+    p2aa1 = setTimeout(p2returnNormal,4000);
 })
 
 p2a2but.addEventListener("click", (e) => {
     player2Attack = p2a2but.getAttribute("data-value")
     player2Sprite.src = p2A2img
-    setTimeout(p2returnNormal,1500);
+    p2aa2 = setTimeout(p2returnNormal,1500);
 })
 
 p2a3but.addEventListener("click", (e) => {
     player2Attack = p2a3but.getAttribute("data-value")
     player2Sprite.src = p2A3img
-    setTimeout(p2returnNormal,4000);
+    p2aa3 = setTimeout(p2returnNormal,4000);
 })
 
 p2a4but.addEventListener("click", (e) => {
     player2Attack = p2a4but.getAttribute("data-value")
     player2Sprite.src = p2A4img
-    setTimeout(p2returnNormal,4000);
+    p2aa4 = setTimeout(p2returnNormal,4000);
 })
 p2a5but.addEventListener("click", (e) => {
     player2Attack = p2a5but.getAttribute("data-value")
     player2Sprite.src = p2A5img
-    setTimeout(p2returnNormal,4500);
+    p2aa5 = setTimeout(p2returnNormal,4500);
 })
 fightb.addEventListener("click", 
-() => {
+() => { stopAni11 ()
+    stopAni12 ()
+    stopAni13 ()
+    stopAni14 ()
+    stopAni15 ()
+    stopAni21 ()
+    stopAni22 ()
+    stopAni23 ()
+    stopAni24 ()
+    stopAni25 ()
+
+    p2returnNormal () 
+    p1returnNormal () 
     if (player1Attack == player2Attack) {
         console.log("Block");
+        document.getElementById("status").innerHTML = "Block!!!!"    ;
     } else if (player1Attack == 0 && player2Attack == 1 ||player1Attack == 0 && player2Attack == 2)  {
         p2Health = p2Health-25 
+        document.getElementById("status").innerHTML = "Player 2 Hit!!!";
         onHitp2 () 
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 0 && player2Attack == 3 ||player1Attack == 0 && player2Attack == 4)  {
         p1Health = p1Health-25 
+        document.getElementById("status").innerHTML = "Player 1 Hit!!!";
         onHitp1 ()
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 1 && player2Attack == 2 ||player1Attack == 1 && player2Attack == 3)  {
         p2Health = p2Health-25 
+        document.getElementById("status").innerHTML = "Player 2 Hit!!!";
         onHitp2 () 
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 1 && player2Attack == 4 ||player1Attack == 1 && player2Attack == 0)  {
         p1Health = p1Health-25 
+        document.getElementById("status").innerHTML = "Player 1 Hit!!!";
         onHitp1 ()
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 2 && player2Attack == 3 ||player1Attack == 2 && player2Attack == 4)  {
         p2Health = p2Health-25 
+        document.getElementById("status").innerHTML = "Player 2 Hit!!!";
         onHitp2 () 
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 2 && player2Attack == 0 ||player1Attack == 2 && player2Attack == 1)  {
         console.log ("workds")
         p1Health = p1Health-25 
+        document.getElementById("status").innerHTML = "Player 1 Hit!!!";
         onHitp1 ()
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 3 && player2Attack == 4 ||player1Attack == 3 && player2Attack == 0)  {
         p2Health = p2Health-25 
+        document.getElementById("status").innerHTML = "Player 2 Hit!!!";
         onHitp2 () 
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 3 && player2Attack == 1 ||player1Attack == 3 && player2Attack == 2)  {
         p1Health = p1Health-25 
+        document.getElementById("status").innerHTML = "Player 1 Hit!!!";
         onHitp1 ()
         onHitp2 () 
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 4 && player2Attack == 0 ||player1Attack == 4 && player2Attack == 1)  {
         p2Health = p2Health-25 
+        document.getElementById("status").innerHTML = "Player 2 Hit!!!";
         onHitp2 () 
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 4 && player2Attack == 2 ||player1Attack == 4 && player2Attack == 3)  {
         p1Health = p1Health-25 
+        document.getElementById("status").innerHTML = "Player 1 Hit!!!";
         onHitp1 ()
         p2healhb ()
         p1healhb ()
@@ -241,16 +273,12 @@ function p1healhb () {
 
 function onHitp1 () {
     if (p1Health == 75 || p1Health == 50 || p1Health == 25){
-    player1Sprite.src = p1hit
-    
-        
-
-    setTimeout(p1returnNormal,5000);
-} else if (p1Health == 0) {
-    player1Sprite.src = p1LoseSprite
-    player2Sprite.src = p2WinSprite
-    clearTimeout(p1returnNormal)
-    clearTimeout(p2returnNormal)
+        player1Sprite.src = p1hit
+        setTimeout(p1returnNormal,5000);
+}   else if (p1Health == 0) {
+        player1Sprite.src = p1LoseSprite
+        player2Sprite.src = p2WinSprite
+        document.getElementById("status").innerHTML = "Player 2 Wins!!!"    ;
 }}
 
 function p1returnNormal () {
@@ -259,11 +287,12 @@ function p1returnNormal () {
 
 function onHitp2 () {
     if (p2Health == 75 || p2Health == 50 || p2Health == 25) {
-    player2Sprite.src = p2hit
-    setTimeout(p2returnNormal,1000);
-} else if (p2Health == 0) {
-    player2Sprite.src = p2LoseSprite
-    player1Sprite.src = p1WinSprite
+        player2Sprite.src = p2hit
+        setTimeout(p2returnNormal,1000);
+}   else if (p2Health == 0) {
+        player2Sprite.src = p2LoseSprite
+        player1Sprite.src = p1WinSprite
+        document.getElementById("status").innerHTML = "Player 1 Wins!!!"    ;
 }
 }
 function p2returnNormal () {
@@ -271,10 +300,40 @@ function p2returnNormal () {
 
 }
 
+function stopAni11 () {
+    clearTimeout(p1aa1)
+}
 
+function stopAni12 () {
+    clearTimeout(p1aa2)
+}
 
+function stopAni13 () {
+    clearTimeout(p1aa3)
+}
 
+function stopAni14 () {
+    clearTimeout(p1aa4)
+}
+function stopAni15 () {
+    clearTimeout(p1aa5)
+}
 
+function stopAni21 () {
+    clearTimeout(p2aa1)
+}
+function stopAni22 () {
+    clearTimeout(p2aa2)
+}
 
-  //   console.log()
+  function stopAni23 () {
+    clearTimeout(p2aa3)
+}
+
+function stopAni24 () {
+    clearTimeout(p2aa4)
+}   
+function stopAni25 () {
+      clearTimeout(p2aa5)
+}
 test ()
