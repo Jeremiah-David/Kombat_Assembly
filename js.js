@@ -10,11 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // // // let sprite =document.querySelector(".sprite")
 // let playerPic = document.querySelector(".whoTurn");
 // let p1SpriteStart = document.querySelector(".sprite1");
-const p1Stand = "images/cat/catmoew.txt";
+const p1Stand = "images/cat/felicia-gem-run.gif";
+let p1hit = "images/cat/felicahit.gif"
 let player1Sprite =document.getElementById("p1Sprite");
 let health1image =document.querySelector(".p1Health")
 let p1bar = "/home/jj/Desktop/general_assembly/FightTurn!/images/healthbar.png"
-const p2Stand = "images/Chunlie/chunstanding.gif";
+const p2Stand = "images/Chunlie/chunchill.gif";
 let player2Sprite =document.getElementById("p2Sprite");
 let health1img =document.querySelector(".p1Healthimg")
 let health2img =document.querySelector(".p2Healthimg")
@@ -31,7 +32,11 @@ let p1A4img =  "images/cat/felicia-rolling.gif"
 let p1a4but = document.querySelector("#p1a4button")
 let p1A5img =  "images/cat/multicat.gif"
 let p1a5but = document.querySelector("#p1a5button")
-let p1wineSprite = "images/cat/feliciawin.gif"
+let p1winSprite = "images/cat/feliciawin.gif"
+let p2WinSprite ="images/Chunlie/chunWin.png"
+let p1LoseSprite = ""
+
+
 //player 2 buttons
 
 let p2A1img = "images/Chunlie/chunball2.gif"
@@ -58,8 +63,8 @@ let health0 = "images/deadheart.jpg"
 
 // Win Screen
 let winScreen = document.querySelector(".winner")
-let p1WIN = "images/p1wins.jpg"
-let p2WIN = "images/player2wins.jpeg"
+// let p1WIN = "images/p1wins.jpg"
+// let p2WIN = "images/player2wins.jpeg"
 // // create characters
 
 
@@ -143,6 +148,7 @@ fightb.addEventListener("click",
         p1healhb ()
     } else if (player1Attack == 0 && player2Attack == 3 ||player1Attack == 0 && player2Attack == 4)  {
         p1Health = p1Health-25 
+        onHitp1 ()
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 1 && player2Attack == 2 ||player1Attack == 1 && player2Attack == 3)  {
@@ -192,8 +198,8 @@ function p2healhb () {
         console.log("healthat25")
     } else if (p2Health == 0) {
         health2img.src = health0
-        winScreen.src = p1WIN
-        player1Sprite.src = p1wineSprite
+      
+        player1Sprite.src = p1winSprite
     }}
 
 function p1healhb () {
@@ -207,10 +213,18 @@ function p1healhb () {
         console.log("healthat25")
     } else if (p1Health == 0) {
         health1img.src = health0
-        winScreen.src = p2WIN
+      
+        player2Sprite.src = p2WinSprite
     }}
 
+function onHitp1 () {
+    player1Sprite.src = p1hit
+    setTimeout(p1returnNormal,3000);
+}
 
+function p1returnNormal () {
+    player1Sprite.src = p1Stand
+}
 
 
 
@@ -222,28 +236,3 @@ function p1healhb () {
   //   console.log()
 test ()
 
- 
-
-
-
-
-// function Fighter(sprite, health) {
-//     this.health = health
-//     // this.actStatus = actStatus
-//     this.alive = true
-//     this.sprite = () => {
-
-
-
-
-//     } 
-    
-// }
-
-// let playerOne = new Fighter() 
-
-
-
-
-
-// console.log(playerOne)
