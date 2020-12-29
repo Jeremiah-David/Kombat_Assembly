@@ -33,9 +33,10 @@ let p1A4img =  "images/cat/felicia-rolling.gif"
 let p1a4but = document.querySelector("#p1a4button")
 let p1A5img =  "images/cat/multicat.gif"
 let p1a5but = document.querySelector("#p1a5button")
-let p1winSprite = "images/cat/feliciawin.gif"
-let p2WinSprite ="images/Chunlie/chunWin.png"
-let p1LoseSprite = ""
+let p1WinSprite = "images/cat/felicatransform.gif"
+let p2WinSprite ="images/Chunlie/chunWIN.gif"
+let p1LoseSprite = "images/cat/felicia-kittybox.gif"
+let p2LoseSprite = "images/Chunlie/chunli-gem-down.gif"
 
 
 //player 2 buttons
@@ -61,6 +62,8 @@ let health50 = "images/halfheart.jpg"
 let health25 = "images/almostdead.jpg"
 let health0 = "images/deadheart.jpg" 
 
+// ?? debugger
+let p1aa1
 
 // Win Screen
 let winScreen = document.querySelector(".winner")
@@ -93,7 +96,7 @@ function test () {
 p1a1but.addEventListener("click", (e) => {
     player1Attack = p1a1but.getAttribute("data-value")
     player1Sprite.src = p1A1img
-    setTimeout(p1returnNormal,5000);
+    p1aa1 = setTimeout(p1returnNormal,5000);
 
 })
 
@@ -106,7 +109,7 @@ p1a2but.addEventListener("click", (e) => {
 p1a3but.addEventListener("click", (e) => {
     player1Attack = p1a3but.getAttribute("data-value")
     player1Sprite.src = p1A3img
-    setTimeout(p1returnNormal,1500);
+    setTimeout(p1returnNormal,1800);
 })
 
 p1a4but.addEventListener("click", (e) => {
@@ -118,7 +121,7 @@ p1a4but.addEventListener("click", (e) => {
 p1a5but.addEventListener("click", (e) => {
     player1Attack = p1a5but.getAttribute("data-value")
     player1Sprite.src = p1A5img
-    setTimeout(p1returnNormal,4000);
+    setTimeout(p1returnNormal,3500);
 })
 
 p2a1but.addEventListener("click", (e) => {
@@ -130,7 +133,7 @@ p2a1but.addEventListener("click", (e) => {
 p2a2but.addEventListener("click", (e) => {
     player2Attack = p2a2but.getAttribute("data-value")
     player2Sprite.src = p2A2img
-    setTimeout(p2returnNormal,4000);
+    setTimeout(p2returnNormal,1500);
 })
 
 p2a3but.addEventListener("click", (e) => {
@@ -147,7 +150,7 @@ p2a4but.addEventListener("click", (e) => {
 p2a5but.addEventListener("click", (e) => {
     player2Attack = p2a5but.getAttribute("data-value")
     player2Sprite.src = p2A5img
-    setTimeout(p2returnNormal,4000);
+    setTimeout(p2returnNormal,4500);
 })
 fightb.addEventListener("click", 
 () => {
@@ -219,8 +222,8 @@ function p2healhb () {
         console.log("healthat25")
     } else if (p2Health == 0) {
         health2img.src = health0
-      
-        player1Sprite.src = p1winSprite
+        // player2Sprite.src = p2LoseSprite
+        // player1Sprite.src = p1winSprite
     }}
 
 function p1healhb () {
@@ -234,26 +237,38 @@ function p1healhb () {
         console.log("healthat25")
     } else if (p1Health == 0) {
         health1img.src = health0
-      
-        player2Sprite.src = p2WinSprite
     }}
 
 function onHitp1 () {
+    if (p1Health == 75 || p1Health == 50 || p1Health == 25){
     player1Sprite.src = p1hit
-    setTimeout(p1returnNormal,3000);
-}
+    
+        
+
+    setTimeout(p1returnNormal,5000);
+} else if (p1Health == 0) {
+    player1Sprite.src = p1LoseSprite
+    player2Sprite.src = p2WinSprite
+    clearTimeout(p1returnNormal)
+    clearTimeout(p2returnNormal)
+}}
 
 function p1returnNormal () {
     player1Sprite.src = p1Stand
 }
 
 function onHitp2 () {
+    if (p2Health == 75 || p2Health == 50 || p2Health == 25) {
     player2Sprite.src = p2hit
-    setTimeout(p2returnNormal,3000);
+    setTimeout(p2returnNormal,1000);
+} else if (p2Health == 0) {
+    player2Sprite.src = p2LoseSprite
+    player1Sprite.src = p1WinSprite
 }
-
+}
 function p2returnNormal () {
     player2Sprite.src = p2Stand
+
 }
 
 
