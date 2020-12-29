@@ -4,21 +4,27 @@
 
 
 body {
+    align-content: center;
+    justify-content: center;
     display: grid;
     align-items: center;
     justify-items: center;
     grid-template-rows: 150px 100px 300px 200px;
-    grid-template-columns: 400px 300px 400px 200px;
+    grid-template-columns: 100px 400px 300px 400px 100px;
     grid-template-areas:     
-    "p1health    title       p2health      inst"
-    "p1controls  fight     p2controls      inst"
-    "p1sprite    fight       p2sprite      inst"
-    "p1sprite    fight       p2sprite      inst";
+    "text1 p1health    title       p2health      inst"
+    "text1 p1controls  fight     p2controls      inst"
+    "text1 p1sprite    fight       p2sprite      inst"
+    "text1 p1sprite    fight       p2sprite      inst";
 
     
     background-image: url(images/darkback1.gif);
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.text1 {
+    grid-area: text1;
 }
 
 h1 {

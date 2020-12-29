@@ -11,11 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // let playerPic = document.querySelector(".whoTurn");
 // let p1SpriteStart = document.querySelector(".sprite1");
 const p1Stand = "images/cat/felicia-gem-run.gif";
-let p1hit = "images/cat/felicahit.gif"
+let p1hit = "images/cat/felicia-gem-dizzy.gif"
 let player1Sprite =document.getElementById("p1Sprite");
 let health1image =document.querySelector(".p1Health")
 let p1bar = "/home/jj/Desktop/general_assembly/FightTurn!/images/healthbar.png"
 const p2Stand = "images/Chunlie/chunchill.gif";
+let p2hit = "images/Chunlie/chunli-gem-dizzy.gif"
 let player2Sprite =document.getElementById("p2Sprite");
 let health1img =document.querySelector(".p1Healthimg")
 let health2img =document.querySelector(".p2Healthimg")
@@ -92,50 +93,61 @@ function test () {
 p1a1but.addEventListener("click", (e) => {
     player1Attack = p1a1but.getAttribute("data-value")
     player1Sprite.src = p1A1img
+    setTimeout(p1returnNormal,5000);
+
 })
 
 p1a2but.addEventListener("click", (e) => {
     player1Attack = p1a2but.getAttribute("data-value")
     player1Sprite.src = p1A2img
+    setTimeout(p1returnNormal,1500);
 })
 
 p1a3but.addEventListener("click", (e) => {
     player1Attack = p1a3but.getAttribute("data-value")
     player1Sprite.src = p1A3img
+    setTimeout(p1returnNormal,1500);
 })
 
 p1a4but.addEventListener("click", (e) => {
     player1Attack = p1a4but.getAttribute("data-value")
     player1Sprite.src = p1A4img
+    setTimeout(p1returnNormal,4000);
 })
 
 p1a5but.addEventListener("click", (e) => {
     player1Attack = p1a5but.getAttribute("data-value")
     player1Sprite.src = p1A5img
+    setTimeout(p1returnNormal,4000);
 })
 
 p2a1but.addEventListener("click", (e) => {
     player2Attack = p2a1but.getAttribute("data-value")
     player2Sprite.src = p2A1img
+    setTimeout(p2returnNormal,4000);
 })
 
 p2a2but.addEventListener("click", (e) => {
     player2Attack = p2a2but.getAttribute("data-value")
     player2Sprite.src = p2A2img
+    setTimeout(p2returnNormal,4000);
 })
 
 p2a3but.addEventListener("click", (e) => {
     player2Attack = p2a3but.getAttribute("data-value")
     player2Sprite.src = p2A3img
+    setTimeout(p2returnNormal,4000);
 })
 
 p2a4but.addEventListener("click", (e) => {
     player2Attack = p2a4but.getAttribute("data-value")
     player2Sprite.src = p2A4img
+    setTimeout(p2returnNormal,4000);
 })
 p2a5but.addEventListener("click", (e) => {
     player2Attack = p2a5but.getAttribute("data-value")
     player2Sprite.src = p2A5img
+    setTimeout(p2returnNormal,4000);
 })
 fightb.addEventListener("click", 
 () => {
@@ -143,7 +155,7 @@ fightb.addEventListener("click",
         console.log("Block");
     } else if (player1Attack == 0 && player2Attack == 1 ||player1Attack == 0 && player2Attack == 2)  {
         p2Health = p2Health-25 
-        
+        onHitp2 () 
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 0 && player2Attack == 3 ||player1Attack == 0 && player2Attack == 4)  {
@@ -153,35 +165,44 @@ fightb.addEventListener("click",
         p1healhb ()
     } else if (player1Attack == 1 && player2Attack == 2 ||player1Attack == 1 && player2Attack == 3)  {
         p2Health = p2Health-25 
+        onHitp2 () 
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 1 && player2Attack == 4 ||player1Attack == 1 && player2Attack == 0)  {
         p1Health = p1Health-25 
+        onHitp1 ()
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 2 && player2Attack == 3 ||player1Attack == 2 && player2Attack == 4)  {
         p2Health = p2Health-25 
+        onHitp2 () 
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 2 && player2Attack == 0 ||player1Attack == 2 && player2Attack == 1)  {
         console.log ("workds")
         p1Health = p1Health-25 
+        onHitp1 ()
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 3 && player2Attack == 4 ||player1Attack == 3 && player2Attack == 0)  {
         p2Health = p2Health-25 
+        onHitp2 () 
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 3 && player2Attack == 1 ||player1Attack == 3 && player2Attack == 2)  {
         p1Health = p1Health-25 
+        onHitp1 ()
+        onHitp2 () 
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 4 && player2Attack == 0 ||player1Attack == 4 && player2Attack == 1)  {
         p2Health = p2Health-25 
+        onHitp2 () 
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 4 && player2Attack == 2 ||player1Attack == 4 && player2Attack == 3)  {
         p1Health = p1Health-25 
+        onHitp1 ()
         p2healhb ()
         p1healhb ()
     }
@@ -226,7 +247,14 @@ function p1returnNormal () {
     player1Sprite.src = p1Stand
 }
 
+function onHitp2 () {
+    player2Sprite.src = p2hit
+    setTimeout(p2returnNormal,3000);
+}
 
+function p2returnNormal () {
+    player2Sprite.src = p2Stand
+}
 
 
 
@@ -235,4 +263,3 @@ function p1returnNormal () {
 
   //   console.log()
 test ()
-
