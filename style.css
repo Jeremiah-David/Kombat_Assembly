@@ -10,12 +10,12 @@ body {
     align-items: center;
     justify-items: center;
     grid-template-rows: 150px 100px 300px 200px;
-    grid-template-columns: 100px 400px 300px 400px 100px;
+    grid-template-columns: 400px 300px 400px 100px;
     grid-template-areas:     
-    "text1 p1health    title       p2health      inst"
-    "text1 p1controls  fight     p2controls      inst"
-    "text1 p1sprite    status      p2sprite      inst"
-    "text1 p1sprite    status       p2sprite     inst";
+    "p1health    title       p2health  "
+    "p1controls  title     p2controls  "
+    "p1sprite    status      p2sprite  "
+    "p1sprite    status       p2sprite ";
 
     
     background-image: url(images/animated-gifs-of-fighting-game-backgrounds-46.gif);

@@ -80,6 +80,10 @@ let winScreen = document.querySelector(".winner")
 // let p2WIN = "images/player2wins.jpeg"
 // // create characters
 
+// Game Controls/instructions
+let reset = document.getElementById("reset") 
+console.log(reset)
+
 
 let player1 = {
     sprite: player1Sprite,
@@ -100,66 +104,72 @@ function test () {
   console.log(player1)
 }
 
-
+reset.addEventListener("click", () => {
+        resetHealth ();
+        p1returnNormal();
+        p2returnNormal();
+        
+        console.log("Test")
+    })
 
 p1a1but.addEventListener("click", (e) => {
     player1Attack = p1a1but.getAttribute("data-value")
     player1Sprite.src = p1A1img
-    p1aa1 = setTimeout(p1returnNormal,5000);
+    p1aa1 = setTimeout(p1returnNormal,5000)
 
 })
 
 p1a2but.addEventListener("click", (e) => {
     player1Attack = p1a2but.getAttribute("data-value")
     player1Sprite.src = p1A2img
-    p1aa2 = setTimeout(p1returnNormal,1500);
+    p1aa2 = setTimeout(p1returnNormal,1500)
 })
 
 p1a3but.addEventListener("click", (e) => {
     player1Attack = p1a3but.getAttribute("data-value")
     player1Sprite.src = p1A3img
-    p1aa3 = setTimeout(p1returnNormal,2500);
+    p1aa3 = setTimeout(p1returnNormal,2500)
 })
 
 p1a4but.addEventListener("click", (e) => {
     player1Attack = p1a4but.getAttribute("data-value")
     player1Sprite.src = p1A4img
-    p1aa4 = setTimeout(p1returnNormal,4000);
+    p1aa4 = setTimeout(p1returnNormal,4000)
 })
 
 p1a5but.addEventListener("click", (e) => {
     player1Attack = p1a5but.getAttribute("data-value")
     player1Sprite.src = p1A5img
-    p1aa5 = setTimeout(p1returnNormal,3500);
+    p1aa5 = setTimeout(p1returnNormal,3500)
 })
 
 p2a1but.addEventListener("click", (e) => {
     player2Attack = p2a1but.getAttribute("data-value")
     player2Sprite.src = p2A1img
-    p2aa1 = setTimeout(p2returnNormal,4000);
+    p2aa1 = setTimeout(p2returnNormal,4000)
 })
 
 p2a2but.addEventListener("click", (e) => {
     player2Attack = p2a2but.getAttribute("data-value")
     player2Sprite.src = p2A2img
-    p2aa2 = setTimeout(p2returnNormal,1500);
+    p2aa2 = setTimeout(p2returnNormal,1500)
 })
 
 p2a3but.addEventListener("click", (e) => {
     player2Attack = p2a3but.getAttribute("data-value")
     player2Sprite.src = p2A3img
-    p2aa3 = setTimeout(p2returnNormal,4000);
+    p2aa3 = setTimeout(p2returnNormal,4000)
 })
 
 p2a4but.addEventListener("click", (e) => {
     player2Attack = p2a4but.getAttribute("data-value")
     player2Sprite.src = p2A4img
-    p2aa4 = setTimeout(p2returnNormal,4000);
+    p2aa4 = setTimeout(p2returnNormal,4000)
 })
 p2a5but.addEventListener("click", (e) => {
     player2Attack = p2a5but.getAttribute("data-value")
     player2Sprite.src = p2A5img
-    p2aa5 = setTimeout(p2returnNormal,4500);
+    p2aa5 = setTimeout(p2returnNormal,4500)
 })
 fightb.addEventListener("click", 
 () => { stopAni11 ()
@@ -254,6 +264,7 @@ function p2healhb () {
         console.log("healthat25")
     } else if (p2Health == 0) {
         health2img.src = health0
+        document.getElementsByClassName("fightb").disabled = true
         // player2Sprite.src = p2LoseSprite
         // player1Sprite.src = p1winSprite
     }}
@@ -269,6 +280,7 @@ function p1healhb () {
         console.log("healthat25")
     } else if (p1Health == 0) {
         health1img.src = health0
+        document.getElementsByClassName("fightb").disabled = true
     }}
 
 function onHitp1 () {
@@ -278,28 +290,39 @@ function onHitp1 () {
 }   else if (p1Health == 0) {
         player1Sprite.src = p1LoseSprite
         player2Sprite.src = p2WinSprite
-        document.getElementById("status").innerHTML = "Player 2 Wins!!!"    ;
+        document.getElementById("status").innerHTML = "Player 2 Wins!!!"    
 }}
 
-function p1returnNormal () {
-    player1Sprite.src = p1Stand
-}
 
 function onHitp2 () {
     if (p2Health == 75 || p2Health == 50 || p2Health == 25) {
         player2Sprite.src = p2hit
         setTimeout(p2returnNormal,1000);
-}   else if (p2Health == 0) {
+    }   else if (p2Health == 0) {
         player2Sprite.src = p2LoseSprite
         player1Sprite.src = p1WinSprite
-        document.getElementById("status").innerHTML = "Player 1 Wins!!!"    ;
+        document.getElementById("status").innerHTML = "Player 1 Wins!!!"    
+    }
 }
+
+// functions for reseting vars
+function p1returnNormal () {
+    player1Sprite.src = p1Stand
 }
 function p2returnNormal () {
     player2Sprite.src = p2Stand
 
 }
+function resetHealth () {
+    p1Health = 100
+    p2Health = 100
+    health1img.src = health100
+    health2img.src = health100
+}
 
+
+
+// funtions for animation timing
 function stopAni11 () {
     clearTimeout(p1aa1)
 }
