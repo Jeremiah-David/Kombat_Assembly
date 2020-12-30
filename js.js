@@ -84,6 +84,12 @@ let winScreen = document.querySelector(".winner")
 let reset = document.getElementById("reset") 
 console.log(reset)
 
+// Win/round
+let rCount = 0
+let p1pwCount = 0
+let p2pwCount = 0
+
+
 
 let player1 = {
     sprite: player1Sprite,
@@ -280,32 +286,35 @@ function p1healhb () {
         console.log("healthat25")
     } else if (p1Health == 0) {
         health1img.src = health0
-        document.getElementsByClassName("fightb").disabled = true
     }}
-
-function onHitp1 () {
-    if (p1Health == 75 || p1Health == 50 || p1Health == 25){
-        player1Sprite.src = p1hit
-        setTimeout(p1returnNormal,5000);
-}   else if (p1Health == 0) {
-        player1Sprite.src = p1LoseSprite
-        player2Sprite.src = p2WinSprite
-        document.getElementById("status").innerHTML = "Player 2 Wins!!!"    
-}}
-
-
-function onHitp2 () {
-    if (p2Health == 75 || p2Health == 50 || p2Health == 25) {
-        player2Sprite.src = p2hit
-        setTimeout(p2returnNormal,1000);
-    }   else if (p2Health == 0) {
-        player2Sprite.src = p2LoseSprite
-        player1Sprite.src = p1WinSprite
-        document.getElementById("status").innerHTML = "Player 1 Wins!!!"    
-    }
-}
-
-// functions for reseting vars
+    
+    function onHitp1 () {
+        if (p1Health == 75 || p1Health == 50 || p1Health == 25){
+            player1Sprite.src = p1hit
+            setTimeout(p1returnNormal,1000);
+        }   else if (p1Health == 0) {
+            player1Sprite.src = p1LoseSprite
+            player2Sprite.src = p2WinSprite
+            document.querySelector("#status").innerHTML = "Player 2 Wins!!!"   
+            document.querySelector(".fightb").disabled = true 
+            // p2pwCount++
+            // console.log(p2pwCount)
+        }}
+        
+        
+        function onHitp2 () {
+            if (p2Health == 75 || p2Health == 50 || p2Health == 25) {
+                player2Sprite.src = p2hit
+                setTimeout(p2returnNormal,1000);
+            }   else if (p2Health == 0) {
+                player2Sprite.src = p2LoseSprite
+                player1Sprite.src = p1WinSprite
+                document.querySelector("#status").innerHTML = "Player 1 Wins!!!"    
+                document.querySelector(".fightb").disabled = true
+            }
+        }
+        
+        // functions for reseting vars
 function p1returnNormal () {
     player1Sprite.src = p1Stand
 }
@@ -358,5 +367,9 @@ function stopAni24 () {
 }   
 function stopAni25 () {
       clearTimeout(p2aa5)
+}
+
+function roundCount () {
+
 }
 test ()
