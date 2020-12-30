@@ -296,10 +296,13 @@ function p1healhb () {
             player1Sprite.src = p1LoseSprite
             player2Sprite.src = p2WinSprite
             document.querySelector("#status").innerHTML = "Player 2 Wins!!!"   
-            document.querySelector(".fightb").disabled = true 
-            // p2pwCount++
-            // console.log(p2pwCount)
-        }}
+            // document.querySelector(".fightb").disabled = true 
+            p2Won ()
+            let round2 = document.createElement("BUTTON")
+            round2.innerHTML = "Round 2!";  
+            document.body.appendChild(round2);  
+        }
+    }
         
         
         function onHitp2 () {
@@ -309,13 +312,36 @@ function p1healhb () {
             }   else if (p2Health == 0) {
                 player2Sprite.src = p2LoseSprite
                 player1Sprite.src = p1WinSprite
-                document.querySelector("#status").innerHTML = "Player 1 Wins!!!"    
-                document.querySelector(".fightb").disabled = true
+                document.querySelector("#status").innerHTML = "Player 1 Wins!!!"  
+                p1Won ()
+                let round2 = document.createElement("BUTTON")
+                round2.innerText = "Round 2!"
+                round2.classList.add("fight")  
+                document.body.appendChild(round2);   
+                // document.querySelector(".fightb").disabled = true
             }
         }
+        //  function for wins/rounds
+        function p2Won() {
+            if (p2pwCount <= 1)
+                p2pwCount++
+                console.log("Player 2 won " + p2pwCount);
+            }
+    
+        function p1Won() {
+            if (p1pwCount <= 1)
+                p1pwCount++
+                console.log("Player one wins " + p1pwCount)
+        }
+
+        function round2Start () {
+
+        }
+        
+        
         
         // functions for reseting vars
-function p1returnNormal () {
+        function p1returnNormal () {
     player1Sprite.src = p1Stand
 }
 function p2returnNormal () {
