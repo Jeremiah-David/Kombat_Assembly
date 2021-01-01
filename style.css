@@ -35,7 +35,7 @@ h1 {
     font-family: 'Special Elite', cursive;
     text-align: center;
     color:antiquewhite;  
-    font-size: 45px;
+    font-size: 10vh 10vw;
     
     
 }
@@ -45,7 +45,7 @@ h1 {
     align-items: center;
     border: azure;
     border-radius: 10%;
-    border-width: 10px;
+    border-width: 1vh;
     border-style: double;
     background-image: url(images/fireworks.gif);
 }
