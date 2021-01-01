@@ -50,7 +50,7 @@ h1 {
     /* border-width: 1vh; */
     /* border-style: double; */
     background-image: url(images/fireworks.gif);
-    font-size: vw;
+    font-size: 3vw;
 }
 
 .player1Health {
@@ -127,5 +127,5 @@ footer {
     align-items: center;
     text-align: center;
     grid-area: footer;
-    text-size-adjust: 30vw;
+    text-size-adjust: 40vw;
 }
