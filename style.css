@@ -9,8 +9,8 @@ body {
     display: grid;
     align-items: center;
     justify-items: center;
-    grid-template-rows: 150px 100px 300px 200px;
-    grid-template-columns: 400px 300px 400px;
+    grid-template-rows: 30% 10% 50% 10%;
+    grid-template-columns: 40% 20% 40%;
     grid-template-areas:     
     "p1health    title       p2health  "
     "p1controls  fight       p2controls"
