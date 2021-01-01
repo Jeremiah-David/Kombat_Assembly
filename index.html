@@ -8,7 +8,6 @@
 </head>
 <body>
     <h1 class="winText"></h1>
-    <button id="reset">Restart Fight!!!!</button>
     <div class="Title">
         <h1>Kombat Assembly!!</h1>
     </div>
@@ -21,45 +20,50 @@
     <div class="player2Health">
         <img class="p2Healthimg" src="images/fullheart.jpg"/>
     </div>
-    <div class ="status">    <h1 id="status">Ready!!!      </h1>
-    </div>
-
+    
     <div class ="fight">
         <img class="winner"/>
         <button type="Fight" class="fightb">
             FIGHT!!!</button>
+        </div>
+        <!-- <div class="player1name"></div> -->
+        <!-- <div class="player2name"></div> -->
+        <div class="player1Profile"></div>
+        <img class="p1Profile"/>
+        <div class="player2Profile">
+            <img class="p2Profile"/>
+        </div>
+        
+        <div class="player1Sprite">
+            <img class="sprite" id="p1Sprite"/>
+        </div>
+        <div class="player2Sprite">
+            <img class="sprite" id="p2Sprite"/>
+        </div>
+        <div class="p1controls">
+            <button class="attack" id="p1a1button" data-value=0>P1:Attack1</button>
+            <button class="attack" id="p1a2button" data-value=1>P1:Attack2</button>
+            <button class="attack" id="p1a3button" data-value=2>P1:Attack3</button>
+            <button class="attack" id="p1a4button" data-value=3>P1:Attack4</button>
+            <button class="attack" id="p1a5button" data-value=4>P1:Attack5</button>
+        </div>
+        <div class="p2controls">
+            <button class="attack" id="p2a1button" data-value=0>P2:Attack1</button>
+            <button class="attack" id="p2a2button" data-value=1>P2:Attack2</button>
+            <button class="attack" id="p2a3button" data-value=2>P2:Attack3</button>
+            <button class="attack" id="p2a4button" data-value=3>P2:Attack4</button>
+            <button class="attack" id="p2a5button" data-value=4>P2:Attack5</button>
+        </div>
+        <!-- <div class="player2Health"></div> -->
+        <div class="gameControls">
+        </div>
+        <footer>
+            <div class ="status">   
+                <h1 id="status">Ready!!!</h1>
+                <button id="reset">Restart Fight!!!!</button>
             </div>
-    <!-- <div class="player1name"></div> -->
-    <!-- <div class="player2name"></div> -->
-    <div class="player1Profile"></div>
-    <img class="p1Profile"/>
-    <div class="player2Profile">
-        <img class="p2Profile"/>
-    </div>
-    
-    <div class="player1Sprite">
-    <img class="sprite" id="p1Sprite"/>
-</div>
-    <div class="player2Sprite">
-        <img class="sprite" id="p2Sprite"/>
-    </div>
-    <div class="p1controls">
-        <button class="attack" id="p1a1button" data-value=0>P1:Attack1</button>
-        <button class="attack" id="p1a2button" data-value=1>P1:Attack2</button>
-        <button class="attack" id="p1a3button" data-value=2>P1:Attack3</button>
-        <button class="attack" id="p1a4button" data-value=3>P1:Attack4</button>
-        <button class="attack" id="p1a5button" data-value=4>P1:Attack5</button>
-    </div>
-    <div class="p2controls">
-        <button class="attack" id="p2a1button" data-value=0>P2:Attack1</button>
-        <button class="attack" id="p2a2button" data-value=1>P2:Attack2</button>
-        <button class="attack" id="p2a3button" data-value=2>P2:Attack3</button>
-        <button class="attack" id="p2a4button" data-value=3>P2:Attack4</button>
-        <button class="attack" id="p2a5button" data-value=4>P2:Attack5</button>
-    </div>
-    <!-- <div class="player2Health"></div> -->
-    <div class="gameControls">
-    </div>
-    <script src="js.js"></script>
-</body>
-</html>
+            
+        </footer>
+        <script src="js.js"></script>
+    </body>
+    </html>
