@@ -49,7 +49,7 @@ h1 {
     /* border-radius: 10%; */
     /* border-width: 1vh; */
     /* border-style: double; */
-    background-image: url(images/fireworks.gif);
+    /* background-image: url(images/fireworks.gif); */
     font-size: 3vw;
 }
 
@@ -89,7 +89,7 @@ h1 {
     size: 400px; */
     width: 300px;
     height: 300px;
-    align-items: end;
+    /* align-items: end; */
     
 }
 .player2Sprite {
@@ -103,8 +103,8 @@ h1 {
     background-size: 400px;
     width: 300px;
     height: 300px;
-    vertical-align: bottom;
-    position: relative;
+    /* vertical-align: bottom;
+    position: relative; */
 }
 .p1controls {
     grid-area: p1controls;
@@ -112,8 +112,8 @@ h1 {
     border-radius: 5%;
     border-width: 10px; */
     /* border-style: groove; */
-    justify-content: center;
-    align-content: center;
+    /* justify-content: center;
+    align-content: center; */
 }
 .p2controls {
     grid-area: p2controls;
@@ -121,6 +121,12 @@ h1 {
     border-radius: 5%;
     border-width: 10px;
     border-style: groove; */
+    /* justify-content: end;
+    justify-self: end;
+    align-self: end;
+    align-content: end;
+    align-items: end;
+    justify-items: end; */
 }
 .inst {
     grid-area: inst;

@@ -10,6 +10,88 @@ document.addEventListener('DOMContentLoaded', () => {
 // // // let sprite =document.querySelector(".sprite")
 // let playerPic = document.querySelector(".whoTurn");
 // let p1SpriteStart = document.querySelector(".sprite1");
+
+
+
+
+
+
+
+
+
+//Xobx controller support
+window.addEventListener('gamepadconnected', event => {
+    console.log("Gamepad Coneected")
+    console.log(event.gamepad)
+
+})
+
+
+// let xButtona = window.addEventListener('gamepadabuttondown' () => {
+//     console.log
+// })
+
+function updateXbox() {
+    let gamepads navigator.getGamepads()
+    if (gamepadState = {
+        id: gamepads[0].id,
+        axes:  [
+            gamepads[0].axes[0].toFixed(2),
+            gamepads[0].axes[1].toFixed(2),
+            gamepads[0].axes[2].toFixed(2),
+            gamepads[0].axes[3].toFixed(2),
+        ],
+        buttons: [
+        { button_0: gamepads[0].bottons[0].pressed },
+        { button_1: gamepads[0].bottons[1].pressed },
+        { button_2: gamepads[0].bottons[2].pressed },
+        { button_3: gamepads[0].bottons[3].pressed },
+        { button_4: gamepads[0].bottons[4].pressed },
+        { button_5: gamepads[0].bottons[5].pressed },
+        { button_6: gamepads[0].bottons[6].pressed },
+        { button_7: gamepads[0].bottons[7].pressed },
+        { button_8: gamepads[0].bottons[8].pressed },
+        { button_9: gamepads[0].bottons[9].pressed },
+        { button_10: gamepads[0].bottons[10].pressed },
+        { button_11: gamepads[0].bottons[11].pressed },
+        { button_12: gamepads[0].bottons[12].pressed },
+        { button_13: gamepads[0].bottons[13].pressed },
+        { button_14: gamepads[0].bottons[14].pressed },
+        { button_15: gamepads[0].bottons[15].pressed },
+        ]
+    })
+}
+function l1Button(button, hold) 
+
+
+
+
+// // // // let controller = {};
+// // // let buttonsPressed = [];
+// // // function gamepadHandler(e) {
+// // //   controller = e.gamepad
+// // //   output.textContent = `Gamepad: ${controller.id}`
+// // // }
+
+// // // function gamepadUpdateHandler() {
+// // //     buttonsPressed = [];
+// // //     if(controller.buttons) {
+// // //         for(var b=0; b<controller.buttons.length; b++) {
+// //             if(controller.buttons[b].pressed) {
+// //                 buttonsPressed.push(b);
+// //             }
+// //         }
+//     }
+// }
+
+
+
+
+
+
+
+///
+
 const p1Stand = "images/cat/felicia-gem-run.gif";
 let p1hit = "images/cat/felicia-gem-dizzy.gif"
 let player1Sprite =document.getElementById("p1Sprite");
@@ -37,6 +119,7 @@ let p1WinSprite = "images/cat/felicatransform.gif"
 let p2WinSprite ="images/Chunlie/chunWIN.gif"
 let p1LoseSprite = "images/cat/felicia-kittybox.gif"
 let p2LoseSprite = "images/Chunlie/chunli-gem-down.gif"
+
 
 
 //player 2 buttons
@@ -110,6 +193,13 @@ function test () {
   console.log(player1)
 }
 
+function p1Attack1 () {
+    player1Attack = p1a1but.getAttribute("data-value")
+    player1Sprite.src = p1A1img
+    p1aa1 = setTimeout(p1returnNormal,5000)
+
+}
+
 reset.addEventListener("click", () => {
         resetHealth ();
         p1returnNormal();
@@ -119,9 +209,7 @@ reset.addEventListener("click", () => {
     })
 
 p1a1but.addEventListener("click", (e) => {
-    player1Attack = p1a1but.getAttribute("data-value")
-    player1Sprite.src = p1A1img
-    p1aa1 = setTimeout(p1returnNormal,5000)
+    p1Attack1()
 
 })
 
@@ -398,4 +486,7 @@ function stopAni25 () {
 function roundCount () {
 
 }
+
+
+
 test ()
