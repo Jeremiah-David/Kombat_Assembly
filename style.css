@@ -9,14 +9,14 @@ body {
     display: grid;
     align-items: center;
     justify-items: center;
-    grid-template-rows: 30% 10% 50% 10px 50px;
+    grid-template-rows: 30% 10% 50% 10px 20%;
     grid-template-columns: 40% 20% 40%;
     grid-template-areas:     
     "p1health    title       p2health  "
     "p1controls  fight       p2controls"
     "p1sprite    status      p2sprite  "
     "p1sprite    status       p2sprite "
-    "p1sprite      footer     p2sprite ";
+    "footer      footer          footer";
     
 
     
@@ -37,8 +37,6 @@ h1 {
     font-family: 'Special Elite', cursive;
     text-align: center;
     color:antiquewhite;  
-    /* font-size: 7vw; */
-    
     
 }
 
@@ -46,11 +44,10 @@ h1 {
     grid-area: title;
     align-items: center;
     border: azure;
-    /* border-radius: 10%; */
-    /* border-width: 1vh; */
-    /* border-style: double; */
-    /* background-image: url(images/fireworks.gif); */
-    font-size: 3vw;
+
+    font-size: 2vw;
+
+
 }
 
 .player1Health {
@@ -75,6 +72,7 @@ h1 {
     border-style: double; */
     justify-content: center;
     align-content: center;
+    
 }
 .player1Sprite {
     grid-area: p1sprite;
@@ -95,42 +93,18 @@ h1 {
 .player2Sprite {
     grid-area: p2sprite;
     align-items: center;
-    /* border: azure; */
-    /* border-radius: 10%; */
-    /* border-width: 10px; */
-    /* border-style: groove; */
-    background-color: rgba(000, 000, 000, .1);
-    background-size: 400px;
+
     width: 300px;
     height: 300px;
-    /* vertical-align: bottom;
-    position: relative; */
+
 }
 .p1controls {
     grid-area: p1controls;
-    /* border: azure;
-    border-radius: 5%;
-    border-width: 10px; */
-    /* border-style: groove; */
-    /* justify-content: center;
-    align-content: center; */
-}
+}  
 .p2controls {
     grid-area: p2controls;
-    /* border: azure;
-    border-radius: 5%;
-    border-width: 10px;
-    border-style: groove; */
-    /* justify-content: end;
-    justify-self: end;
-    align-self: end;
-    align-content: end;
-    align-items: end;
-    justify-items: end; */
 }
-.inst {
-    grid-area: inst;
-}
+
 .sprite {
     height: 100%;
     width: 100%;
@@ -139,5 +113,9 @@ footer {
     align-items: center;
     text-align: center;
     grid-area: footer;
-    text-size-adjust: 40vw;
+    text-size-adjust: 3vw;
+    background-color: black;
+    font-family: 'Special Elite', cursive;
+    text-align: center;
+    color:antiquewhite;  
 }
