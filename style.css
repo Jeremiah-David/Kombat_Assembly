@@ -11,7 +11,7 @@ body {
     display: grid;
     align-items: center;
     justify-items: center;
-    grid-template-rows: 15% 15% 50% 10% 10%;
+    grid-template-rows: 15% 30% 50% 10% 10%;
     /* grid-template-columns: 40% 20% 40%; */
     grid-template-areas:     
     "p1health    title       p2health  "
@@ -27,6 +27,9 @@ body {
     background-size: cover;
 }
 
+button {
+    padding: 10px
+}
 
 
 .status {
