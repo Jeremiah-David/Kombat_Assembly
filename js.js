@@ -103,8 +103,8 @@ function gamestart () {
     player1Sprite.src = p1Stand
    
     player2Sprite.src = p2Stand
-    // health21image.src = p2bar
-    // fightb.remove()
+    
+    fightb.style.display = "none"
 }
 
 function p1Attack1 () {
@@ -116,21 +116,18 @@ function p1Attack1 () {
 
 computer.addEventListener("click", () => {
     comp ();
-    computer.remove()
-    player2Game.remove()
-    fightb.add()
+    computer.style.display = "none"
+    player2Game.style.display = "none"
+    fightb.style.display = "initial"
 })
 
 player2Game.addEventListener("click", () => {
-    computer.remove()
-    player2Game.remove()
-    fightb.add()
-    addFightb()
+    computer.style.display = "none"
+    player2Game.style.display = "none"
+    fightb.style.display = "initial"
+
 })
 
-function addFightb() {
-    fightb.add()
-}
 
 let cAttack 
 let compMove = false
@@ -140,14 +137,18 @@ let rando
 function comp() {
     p2controls.remove() 
     compMove = true
-
 }
+
+function player2badd() {
+    player2Game.add()
+}
+
 reset.addEventListener("click", () => {
         resetHealth ();
         p1returnNormal();
         p2returnNormal();
         compMove = false
-        player2Game.add()
+        player2badd()
         computer.add()
         console.log("Test")
     })
@@ -224,8 +225,8 @@ fightb.addEventListener("click",
     p2returnNormal () 
     p1returnNormal () 
     if (compMove === true) {
-        player2Attack = rando
         rando = Math.floor(Math.random() * 5)
+        player2Attack = rando
     
     }
     if (player1Attack == player2Attack) {
@@ -335,9 +336,7 @@ function p1healhb () {
             document.querySelector("#status").innerHTML = "Player 2 Wins!!!"   
             // document.querySelector(".fightb").disabled = true 
             p2Won ()
-            let round2 = document.createElement("BUTTON")
-            round2.innerHTML = "Round 2!";  
-            document.body.appendChild(round2);  
+            
         }
     }
         
@@ -351,11 +350,7 @@ function p1healhb () {
                 player1Sprite.src = p1WinSprite
                 document.querySelector("#status").innerHTML = "Player 1 Wins!!!"  
                 p1Won ()
-                let round2 = document.createElement("BUTTON")
-                round2.innerText = "Round 2!"
-                round2.classList.add("fight")  
-                document.body.appendChild(round2);   
-                // document.querySelector(".fightb").disabled = true
+                
             }
         }
         //  function for wins/rounds
