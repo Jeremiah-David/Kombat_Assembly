@@ -12,7 +12,7 @@ body {
     align-items: center;
     justify-items: center;
     grid-template-rows: 15% 15% 50% 10% 10%;
-    grid-template-columns: 40% 20% 40%;
+    /* grid-template-columns: 40% 20% 40%; */
     grid-template-areas:     
     "p1health    title       p2health  "
     "p1controls  fight       p2controls"
@@ -31,9 +31,7 @@ body {
 
 .status {
     grid-area: status;
-    border: white;
-    border-radius: 5%;
-    border: double
+
 }
 
 h1 {
@@ -120,8 +118,8 @@ footer {
     /* justify-content: center;
     align-content: center; */
     grid-area: footer;
-    text-size-adjust: 3vw;
-    background: linear-gradient(0deg, rgba(0,14,255,1) 0%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.14329481792717091) 100%);
+    /* text-size-adjust: 3vw; */
+    background: linear-gradient(0deg, rgba(0,14,255,1) 0%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.1) 100%);
     font-family: 'Special Elite', cursive;
     text-align: center;
     color:antiquewhite;  
@@ -133,3 +131,7 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+@media screen and (max-width: 615px) {
+
+} 
