@@ -2,12 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("Hellyah Domloaded!")
 })
 
-function comp() {
-    let cplay = player2Attack[rando]
-    let rando = Math.floor(math.random() * 5)
-    p2controls.remove() 
-}
 
+let player2Game = document.querySelector(".player2Game")
+let computer = document.querySelector(".computer")
 let p2controls = document.querySelector(".p2controls")
 const p1Stand = "images/cat/felicia-gem-run.gif";
 let p1hit = "images/cat/felicia-gem-dizzy.gif"
@@ -107,8 +104,7 @@ function gamestart () {
    
     player2Sprite.src = p2Stand
     // health21image.src = p2bar
-  console.log(player1)
-  console.log(gamepads)
+    // fightb.remove()
 }
 
 function p1Attack1 () {
@@ -118,11 +114,41 @@ function p1Attack1 () {
 
 }
 
+computer.addEventListener("click", () => {
+    comp ();
+    computer.remove()
+    player2Game.remove()
+    fightb.add()
+})
+
+player2Game.addEventListener("click", () => {
+    computer.remove()
+    player2Game.remove()
+    fightb.add()
+    addFightb()
+})
+
+function addFightb() {
+    fightb.add()
+}
+
+let cAttack 
+let compMove = false
+let rando
+
+
+function comp() {
+    p2controls.remove() 
+    compMove = true
+
+}
 reset.addEventListener("click", () => {
         resetHealth ();
         p1returnNormal();
         p2returnNormal();
-        
+        compMove = false
+        player2Game.add()
+        computer.add()
         console.log("Test")
     })
 
@@ -197,6 +223,11 @@ fightb.addEventListener("click",
 
     p2returnNormal () 
     p1returnNormal () 
+    if (compMove === true) {
+        player2Attack = rando
+        rando = Math.floor(Math.random() * 5)
+    
+    }
     if (player1Attack == player2Attack) {
         console.log("Block");
         document.getElementById("status").innerHTML = "Block!!!!"    ;
