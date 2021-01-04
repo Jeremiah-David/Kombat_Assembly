@@ -84,3 +84,71 @@ window.requestAnimationFrame(update)
 // //         }
 //     }
 // }
+
+function gamestart () {
+    player1Sprite.src = p1Stand
+   
+    player2Sprite.src = p2Stand
+    
+    fightb.style.display = "none"
+ 
+    p1a1but.style.display = "none"
+    p1a2but.style.display = "none"
+    p1a3but.style.display = "none"
+    p1a4but.style.display = "none"
+    p1a5but.style.display = "none"
+    p2a1but.style.display = "none"
+    p2a2but.style.display = "none"
+    p2a3but.style.display = "none"
+    p2a4but.style.display = "none"
+    p2a5but.style.display = "none"
+
+    reset.addEventListener("click", () => {
+        resetHealth ();
+        p1returnNormal();
+        p2returnNormal();
+        compMove = false
+               
+        console.log("Test")
+        computer.style.display = "initial"
+        player2Game.style.display = "initial"
+        fightb.style.display ="none"
+        player2Game.style.display = "none"
+        p1a1but.style.display = "none"
+        p1a2but.style.display = "none"
+        p1a3but.style.display = "none"
+        p1a4but.style.display = "none"
+        p1a5but.style.display = "none"
+        
+
+    })
+
+    computer.addEventListener("click", () => {
+        comp ();
+        computer.style.display = "none"
+        player2Game.style.display = "none"
+        fightb.style.display = "initial"
+        p1a1but.style.display = "initial"
+        p1a2but.style.display = "initial"
+        p1a3but.style.display = "initial"
+        p1a4but.style.display = "initial"
+        p1a5but.style.display = "initial"
+        
+    
+    })
+    
+    player2Game.addEventListener("click", () => {
+        computer.style.display = "none"
+        player2Game.style.display = "none"
+        fightb.style.display = "initial"
+        p1a1but.style.display = "initial"
+        p1a2but.style.display = "initial"
+        p1a3but.style.display = "initial"
+        p1a4but.style.display = "initial"
+        p1a5but.style.display = "initial"
+        p2a1but.style.display = "initial"
+        p2a2but.style.display = "initial"
+        p2a3but.style.display = "initial"
+        p2a4but.style.display = "initial"
+        p2a5but.style.display = "initial"
+    })
