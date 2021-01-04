@@ -119,14 +119,11 @@ function gamestart () {
 }
 
 function p1Attack1 () {
-    player1Attack = p1a1but.getAttribute("data-value")
+    
     
 }
-function p1Attack1anm () {
-    player1Sprite.src = p1A1img
-    p1aa1 = setTimeout(p1returnNormal,5000)
-    
-}
+
+
 
 // Choose Game Mode
 computer.addEventListener("click", () => {
@@ -188,32 +185,28 @@ reset.addEventListener("click", () => {
 
 
 p1a1but.addEventListener("click", (e) => {
-    p1Attack1()
+    player1Attack = p1a1but.getAttribute("data-value")
 
 })
 
 p1a2but.addEventListener("click", (e) => {
     player1Attack = p1a2but.getAttribute("data-value")
-    player1Sprite.src = p1A2img
-    p1aa2 = setTimeout(p1returnNormal,1500)
+
 })
 
 p1a3but.addEventListener("click", (e) => {
     player1Attack = p1a3but.getAttribute("data-value")
-    player1Sprite.src = p1A3img
-    p1aa3 = setTimeout(p1returnNormal,2500)
+    
 })
 
 p1a4but.addEventListener("click", (e) => {
     player1Attack = p1a4but.getAttribute("data-value")
-    player1Sprite.src = p1A4img
-    p1aa4 = setTimeout(p1returnNormal,4000)
+
 })
 
 p1a5but.addEventListener("click", (e) => {
     player1Attack = p1a5but.getAttribute("data-value")
-    player1Sprite.src = p1A5img
-    p1aa5 = setTimeout(p1returnNormal,3500)
+
 })
 
 p2a1but.addEventListener("click", (e) => {
@@ -246,18 +239,18 @@ p2a5but.addEventListener("click", (e) => {
 })
 fightb.addEventListener("click", 
 () => { stopAni11 ()
-    stopAni12 ()
-    stopAni13 ()
-    stopAni14 ()
-    stopAni15 ()
-    stopAni21 ()
-    stopAni22 ()
-    stopAni23 ()
-    stopAni24 ()
-    stopAni25 ()
+    // stopAni12 ()
+    // stopAni13 ()
+    // stopAni14 ()
+    // stopAni15 ()
+    // stopAni21 ()
+    // stopAni22 ()
+    // stopAni23 ()
+    // stopAni24 ()
+    // stopAni25 ()
 
-    p2returnNormal () 
-    p1returnNormal () 
+    // p2returnNormal () 
+    // p1returnNormal () 
     if (compMove === true) {
         rando = Math.floor(Math.random() * 5)
         player2Attack = rando
@@ -331,6 +324,28 @@ fightb.addEventListener("click",
     }
 })
 
+
+function animatedP1() {
+    console.log("testanimation")
+    if (player1Attack == 1) {
+        player1Sprite.src = p1A1img
+        p1aa1 = setTimeout(p1returnNormal,5000)
+        console.log("animatetest")
+    } else if (player1Attack == 2) {
+        player1Sprite.src = p1A2img
+        p1aa2 = setTimeout(p1returnNormal,1500)
+    } else if (player1Attack == 3) {
+        player1Sprite.src = p1A3img
+        p1aa3 = setTimeout(p1returnNormal,2500)
+    } else if (player1Attack == 4) {
+        player1Sprite.src = p1A4img
+        p1aa4 = setTimeout(p1returnNormal,4000)
+    }  else if (player1Attack == 5) {
+        player1Sprite.src = p1A5img
+        p1aa5 = setTimeout(p1returnNormal,3500)
+    }
+}
+
 function p2healhb () {
     if (p2Health == 75) { 
     health2img.src = health75
@@ -379,36 +394,21 @@ function p1healhb () {
         function onHitp2 () {
             if (p2Health == 75 || p2Health == 50 || p2Health == 25) {
                 player2Sprite.src = p2hit
+                animatedP1()
                 setTimeout(p2returnNormal,1000);
             }   else if (p2Health == 0) {
                 player2Sprite.src = p2LoseSprite
                 player1Sprite.src = p1WinSprite
                 document.querySelector("#status").innerHTML = "Player 1 Wins!!!"  
-                p1Won ()
+                
                 
             }
         }
-        //  function for wins/rounds
-        function p2Won() {
-            if (p2pwCount <= 1)
-                p2pwCount++
-                console.log("Player 2 won " + p2pwCount);
-            }
-    
-        function p1Won() {
-            if (p1pwCount <= 1)
-                p1pwCount++
-                console.log("Player one wins " + p1pwCount)
-        }
 
-        function round2Start () {
-
-        }
-        
         
         
         // functions for reseting vars
-        function p1returnNormal () {
+function p1returnNormal () {
     player1Sprite.src = p1Stand
 }
 function p2returnNormal () {
