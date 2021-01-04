@@ -105,27 +105,58 @@ function gamestart () {
     player2Sprite.src = p2Stand
     
     fightb.style.display = "none"
+ 
+    p1a1but.style.display = "none"
+    p1a2but.style.display = "none"
+    p1a3but.style.display = "none"
+    p1a4but.style.display = "none"
+    p1a5but.style.display = "none"
+    p2a1but.style.display = "none"
+    p2a2but.style.display = "none"
+    p2a3but.style.display = "none"
+    p2a4but.style.display = "none"
+    p2a5but.style.display = "none"
 }
 
 function p1Attack1 () {
     player1Attack = p1a1but.getAttribute("data-value")
+    
+}
+function p1Attack1anm () {
     player1Sprite.src = p1A1img
     p1aa1 = setTimeout(p1returnNormal,5000)
-
+    
 }
 
+// Choose Game Mode
 computer.addEventListener("click", () => {
     comp ();
     computer.style.display = "none"
     player2Game.style.display = "none"
     fightb.style.display = "initial"
+    p1a1but.style.display = "initial"
+    p1a2but.style.display = "initial"
+    p1a3but.style.display = "initial"
+    p1a4but.style.display = "initial"
+    p1a5but.style.display = "initial"
+    
+
 })
 
 player2Game.addEventListener("click", () => {
     computer.style.display = "none"
     player2Game.style.display = "none"
     fightb.style.display = "initial"
-
+    p1a1but.style.display = "initial"
+    p1a2but.style.display = "initial"
+    p1a3but.style.display = "initial"
+    p1a4but.style.display = "initial"
+    p1a5but.style.display = "initial"
+    p2a1but.style.display = "initial"
+    p2a2but.style.display = "initial"
+    p2a3but.style.display = "initial"
+    p2a4but.style.display = "initial"
+    p2a5but.style.display = "initial"
 })
 
 
@@ -144,14 +175,17 @@ function player2badd() {
 }
 
 reset.addEventListener("click", () => {
-        resetHealth ();
-        p1returnNormal();
-        p2returnNormal();
-        compMove = false
-        player2badd()
-        computer.add()
-        console.log("Test")
-    })
+    resetHealth ();
+    p1returnNormal();
+    p2returnNormal();
+    compMove = false
+           
+    console.log("Test")
+    computer.style.display = "initial"
+    player2Game.style.display = "initial"
+    fightb.style.display ="none"
+})
+
 
 p1a1but.addEventListener("click", (e) => {
     p1Attack1()
@@ -327,6 +361,7 @@ function p1healhb () {
     }}
     
     function onHitp1 () {
+
         if (p1Health == 75 || p1Health == 50 || p1Health == 25){
             player1Sprite.src = p1hit
             setTimeout(p1returnNormal,1000);
@@ -434,3 +469,8 @@ function roundCount () {
 
 
 gamestart ()
+
+
+//animations as functions
+
+//Switch statements
