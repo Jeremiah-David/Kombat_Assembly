@@ -117,6 +117,7 @@ function gamestart () {
    
     player2Sprite.src = p2Stand
     
+    // fightb.style.display = "none"
     fightb.style.display = "none"
  
     p1a1but.style.display = "none"
@@ -135,10 +136,6 @@ function gamestart () {
     // p2controls.style.display = "none"
 }
 
-function p1Attack1 () {
-    
-    
-}
 
 p1fat.addEventListener("click", () => {
     p2Health = p2Health-25
@@ -146,7 +143,7 @@ p1fat.addEventListener("click", () => {
     onHitp2()
     console.log(p2Health)
     p2healhb () 
-    p1fat.style.display = "none"
+    p1fat.style.visibility = "hidden"
 
 
 })
@@ -157,7 +154,7 @@ p2fat.addEventListener("click", () => {
     onHitp1()
     console.log(p2Health)
     p1healhb () 
-    p2fat.style.display = "none"
+    p2fat.style.visibility = "hidden"
 
 
 })
@@ -194,10 +191,9 @@ player2Game.addEventListener("click", () => {
     p2a3but.style.display = "initial"
     p2a4but.style.display = "initial"
     p2a5but.style.display = "initial"
-    // p1controls.style.display = "initial"
-    // p2controls.style.display = "initial"
-    p1fat.style.display = "none"
     p2fat.style.display = "none"
+    p1fat.style.display = "none"
+    fightb.style.visibility = "visible"
 })
 
 
@@ -236,6 +232,10 @@ reset.addEventListener("click", () => {
     p2a3but.style.display = "none"
     p2a4but.style.display = "none"
     p2a5but.style.display = "none"
+    sPA2 = 0
+    sPA1 = 0
+    document.querySelector("#status").innerHTML = "Ready!!!!"  
+    
 
 
 })
@@ -412,8 +412,7 @@ p2a5but.addEventListener("click", (e) => {
 })
 fightb.addEventListener("click", 
 () => {
-    p2fat.style.display = "none"
-    p1fat.style.display = "none"
+
     
     if (compMove === true) {
         rando = Math.floor(Math.random() * 5)
@@ -610,7 +609,9 @@ function p1healhb () {
         }   else if (p1Health == 0) {
             player1Sprite.src = p1LoseSprite
             player2Sprite.src = p2WinSprite
-            document.querySelector("#status").innerHTML = "Player 2 Wins!!!"   
+            document.querySelector("#status").innerHTML = "Player 2 Wins!!!"  
+            // fightb.style.display = "none" 
+            fightb.style.display = "none"
             // document.querySelector(".fightb").disabled = true 
             
             
@@ -631,6 +632,8 @@ function p1healhb () {
                 player2Sprite.src = p2LoseSprite
                 player1Sprite.src = p1WinSprite
                 document.querySelector("#status").innerHTML = "Player 1 Wins!!!"  
+                fightb.style.display = "none"
+                // fightb.style.display = "none" 
                 
             }
         }
@@ -650,8 +653,7 @@ function resetHealth () {
     p2Health = 100
     health1img.src = health100
     health2img.src = health100
-    p1fat = 0
-    p2fat = 0
+
 }
 
 
