@@ -143,7 +143,7 @@ p1fat.addEventListener("click", () => {
     onHitp2()
     console.log(p2Health)
     p2healhb () 
-    p1fat.style.visibility = "hidden"
+    p1fat.style.display ="none"
 
 
 })
@@ -154,7 +154,7 @@ p2fat.addEventListener("click", () => {
     onHitp1()
     console.log(p2Health)
     p1healhb () 
-    p2fat.style.visibility = "hidden"
+    p2fat.style.display ="none"
 
 
 })
@@ -170,8 +170,18 @@ computer.addEventListener("click", () => {
     p1a3but.style.display = "initial"
     p1a4but.style.display = "initial"
     p1a5but.style.display = "initial"
-    p1controls.style.display = "initial"
-    p1fat.style.display = "none"
+    // p1controls.style.display = "initial"
+    // p1fat.style.display = "none"
+    
+    
+    fightb.style.display = "initial"
+    p2a1but.style.display = "initial"
+    p2a2but.style.display = "initialgit "
+    p2a3but.style.display = "none"
+    p2a4but.style.display = "none"
+    p2a5but.style.display = "none"
+    // p1controls.style.display = "initial"
+    // p1fat.style.display = "none"
     
 
 })
@@ -191,8 +201,8 @@ player2Game.addEventListener("click", () => {
     p2a3but.style.display = "initial"
     p2a4but.style.display = "initial"
     p2a5but.style.display = "initial"
-    p2fat.style.display = "none"
-    p1fat.style.display = "none"
+    // p2fat.style.display = "none"
+    // p1fat.style.display = "none"
     fightb.style.visibility = "visible"
 })
 
@@ -491,7 +501,7 @@ fightb.addEventListener("click",
 //Fatalities
 function p1Fat() {
     if (sPA1 == 3 ) {
-        p1fat.style.display = "initial"
+        p1fat.style.display = "inline-block"
         p1a1but.style.display = "none"
         p1a2but.style.display = "none"
         p1a3but.style.display = "none"
@@ -502,13 +512,14 @@ function p1Fat() {
         p2a3but.style.display = "none"
         p2a4but.style.display = "none"
         p2a5but.style.display = "none"
+        
 
     }
 }
 
 function p2Fat() {
     if (sPA2 == 3 ) {
-        p2fat.style.display = "initial"
+        p2fat.style.display = "inline-block"
         p1a1but.style.display = "none"
         p1a2but.style.display = "none"
         p1a3but.style.display = "none"
