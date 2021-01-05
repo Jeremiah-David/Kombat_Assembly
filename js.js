@@ -462,7 +462,9 @@ fightb.addEventListener("click",
     if (player1Attack == player2Attack) {
         secretCount = secretCount+1
         secretActive()
-        document.getElementById("status").innerHTML = "Block!!!!"    
+        document.getElementById("status").innerHTML = "Block!!!!"   
+        player1Sprite.src = p1hit
+        player2Sprite.src = p2hit 
     } else if (player1Attack == 0 && player2Attack == 1 ||player1Attack == 0 && player2Attack == 2)  {
         p2Health = p2Health-25 
         document.getElementById("status").innerHTML = "Player 2 Hit!!!"
