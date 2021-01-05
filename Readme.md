@@ -16,11 +16,12 @@ Every round each fighter picks an attack. Then the fight button is hit. They col
 In Game Screen Shot
 
 
-
+![Screenshot from 2021-01-04 13-51-41](https://user-images.githubusercontent.com/75584451/103601727-2025cb80-4ebf-11eb-89ee-35a8ea1f0d95.png)
 
 
 
 WireFrame:
+![FightTurn!](https://user-images.githubusercontent.com/75584451/103601646-ec4aa600-4ebe-11eb-8f11-04144a71914c.png)
 
 MVP:
 Create a Turn based fighting game
