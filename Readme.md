@@ -35,6 +35,18 @@ Responsive design
 Better animation timing
 Computer Player
 Better end user experience (Button appearing and disappearing when function is needed for player)
+Special Moves activated under conditions
+Movement around the board as a player state, with enviromental factors
+
+Technology:
+HTML
+CSS
+Javascript
+Visual Studio Code
+Slack
+Zoom
+PikoPixel
+
 
 
 
