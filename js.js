@@ -2,10 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("Hellyah Domloaded!")
 })
 
+// assigned global vars
+
 
 let player2Game = document.querySelector(".player2Game")
 let computer = document.querySelector(".computer")
 let p2controls = document.querySelector(".p2controls")
+let p1controls = document.querySelector(".p1controls")
 const p1Stand = "images/cat/felicia-gem-run.gif";
 let p1hit = "images/cat/felicia-gem-dizzy.gif"
 let player1Sprite =document.getElementById("p1Sprite");
@@ -34,6 +37,10 @@ let p2WinSprite ="images/Chunlie/chunWIN.gif"
 let p1LoseSprite = "images/cat/felicia-kittybox.gif"
 let p2LoseSprite = "images/Chunlie/chunli-gem-down.gif"
 
+// fatality vers
+let fat = document.querySelector(".fat")
+let p1fat = document.querySelector("#p1fbutton")
+let p2fat = document.querySelector("#p2fbutton")
 
 
 //player 2 buttons
@@ -79,13 +86,17 @@ let winScreen = document.querySelector(".winner")
 
 // Game Controls/instructions
 let reset = document.getElementById("reset") 
-console.log(reset)
+
 
 // Win/round
 let rCount = 0
 let p1pwCount = 0
 let p2pwCount = 0
 
+//Special Attack
+let sPA1 = 0
+let sPA2 = 0
+let sPA1img = "images/cat/Catfat.gif"
 
 
 let player1 = {
@@ -99,6 +110,8 @@ let player2 = {
     healthbar2: health2img,
     p2Health: 100,
 }
+
+// Game load start function
 function gamestart () {
     player1Sprite.src = p1Stand
    
@@ -111,11 +124,15 @@ function gamestart () {
     p1a3but.style.display = "none"
     p1a4but.style.display = "none"
     p1a5but.style.display = "none"
+    // p1controls.style.display = "none"
     p2a1but.style.display = "none"
     p2a2but.style.display = "none"
     p2a3but.style.display = "none"
     p2a4but.style.display = "none"
     p2a5but.style.display = "none"
+    p2fat.style.display = "none"
+    p1fat.style.display = "none"
+    // p2controls.style.display = "none"
 }
 
 function p1Attack1 () {
@@ -123,7 +140,27 @@ function p1Attack1 () {
     
 }
 
+p1fat.addEventListener("click", () => {
+    p2Health = p2Health-25
+    player1Sprite.src = sPA1img
+    onHitp2()
+    console.log(p2Health)
+    p2healhb () 
+    p1fat.style.display = "none"
 
+
+})
+
+p2fat.addEventListener("click", () => {
+    p1Health = p1Health-25
+    player1Sprite.src = sPA1img
+    onHitp1()
+    console.log(p2Health)
+    p1healhb () 
+    p2fat.style.display = "none"
+
+
+})
 
 // Choose Game Mode
 computer.addEventListener("click", () => {
@@ -136,11 +173,14 @@ computer.addEventListener("click", () => {
     p1a3but.style.display = "initial"
     p1a4but.style.display = "initial"
     p1a5but.style.display = "initial"
+    p1controls.style.display = "initial"
+    p1fat.style.display = "none"
     
 
 })
 
 player2Game.addEventListener("click", () => {
+    
     computer.style.display = "none"
     player2Game.style.display = "none"
     fightb.style.display = "initial"
@@ -154,6 +194,10 @@ player2Game.addEventListener("click", () => {
     p2a3but.style.display = "initial"
     p2a4but.style.display = "initial"
     p2a5but.style.display = "initial"
+    // p1controls.style.display = "initial"
+    // p2controls.style.display = "initial"
+    p1fat.style.display = "none"
+    p2fat.style.display = "none"
 })
 
 
@@ -176,11 +220,12 @@ reset.addEventListener("click", () => {
     p1returnNormal();
     p2returnNormal();
     compMove = false
-    console.log("Test")
+    
     computer.style.display = "initial"
     player2Game.style.display = "initial"
     fightb.style.display ="none"
-   
+    // p1controls.style.display = "none"
+    // p2controls.style.display ="none"
     p1a1but.style.display = "none"
     p1a2but.style.display = "none"
     p1a3but.style.display = "none"
@@ -192,11 +237,13 @@ reset.addEventListener("click", () => {
     p2a4but.style.display = "none"
     p2a5but.style.display = "none"
 
+
 })
 
 
 p1a1but.addEventListener("click", (e) => {
     player1Attack = p1a1but.getAttribute("data-value")
+    stopAni11 ()
     stopAni12 ()
     stopAni13 ()
     stopAni14 ()
@@ -213,6 +260,7 @@ p1a1but.addEventListener("click", (e) => {
 
 p1a2but.addEventListener("click", (e) => {
     player1Attack = p1a2but.getAttribute("data-value")
+    stopAni11 ()
     stopAni12 ()
     stopAni13 ()
     stopAni14 ()
@@ -229,6 +277,7 @@ p1a2but.addEventListener("click", (e) => {
 
 p1a3but.addEventListener("click", (e) => {
     player1Attack = p1a3but.getAttribute("data-value")
+    stopAni11 ()
     stopAni12 ()
     stopAni13 ()
     stopAni14 ()
@@ -245,6 +294,7 @@ p1a3but.addEventListener("click", (e) => {
 
 p1a4but.addEventListener("click", (e) => {
     player1Attack = p1a4but.getAttribute("data-value")
+    stopAni11 ()
     stopAni12 ()
     stopAni13 ()
     stopAni14 ()
@@ -261,6 +311,7 @@ p1a4but.addEventListener("click", (e) => {
 
 p1a5but.addEventListener("click", (e) => {
     player1Attack = p1a5but.getAttribute("data-value")
+    stopAni11 ()
     stopAni12 ()
     stopAni13 ()
     stopAni14 ()
@@ -277,6 +328,7 @@ p1a5but.addEventListener("click", (e) => {
 
 p2a1but.addEventListener("click", (e) => {
     player2Attack = p2a1but.getAttribute("data-value")
+    stopAni11 ()
     stopAni12 ()
     stopAni13 ()
     stopAni14 ()
@@ -293,6 +345,7 @@ p2a1but.addEventListener("click", (e) => {
 
 p2a2but.addEventListener("click", (e) => {
     player2Attack = p2a2but.getAttribute("data-value")
+    stopAni11 ()
     stopAni12 ()
     stopAni13 ()
     stopAni14 ()
@@ -309,6 +362,7 @@ p2a2but.addEventListener("click", (e) => {
 
 p2a3but.addEventListener("click", (e) => {
     player2Attack = p2a3but.getAttribute("data-value")
+    stopAni11 ()
     stopAni12 ()
     stopAni13 ()
     stopAni14 ()
@@ -325,6 +379,7 @@ p2a3but.addEventListener("click", (e) => {
 
 p2a4but.addEventListener("click", (e) => {
     player2Attack = p2a4but.getAttribute("data-value")
+    stopAni11 ()
     stopAni12 ()
     stopAni13 ()
     stopAni14 ()
@@ -340,6 +395,7 @@ p2a4but.addEventListener("click", (e) => {
 })
 p2a5but.addEventListener("click", (e) => {
     player2Attack = p2a5but.getAttribute("data-value")
+    stopAni11 ()
     stopAni12 ()
     stopAni13 ()
     stopAni14 ()
@@ -356,26 +412,16 @@ p2a5but.addEventListener("click", (e) => {
 })
 fightb.addEventListener("click", 
 () => {
-// { stopAni11 ()
-//     // stopAni12 ()
-//     // stopAni13 ()
-//     // stopAni14 ()
-//     // stopAni15 ()
-//     // stopAni21 ()
-//     // stopAni22 ()
-//     // stopAni23 ()
-//     // stopAni24 ()
-//     // stopAni25 ()
-
-//     // p2returnNormal () 
-//     // p1returnNormal () 
+    p2fat.style.display = "none"
+    p1fat.style.display = "none"
+    
     if (compMove === true) {
         rando = Math.floor(Math.random() * 5)
         player2Attack = rando
     
     }
     if (player1Attack == player2Attack) {
-        console.log("Block");
+        
         document.getElementById("status").innerHTML = "Block!!!!"    ;
     } else if (player1Attack == 0 && player2Attack == 1 ||player1Attack == 0 && player2Attack == 2)  {
         p2Health = p2Health-25 
@@ -408,7 +454,7 @@ fightb.addEventListener("click",
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 2 && player2Attack == 0 ||player1Attack == 2 && player2Attack == 1)  {
-        console.log ("workds")
+        
         p1Health = p1Health-25 
         document.getElementById("status").innerHTML = "Player 1 Hit!!!";
         onHitp1 ()
@@ -443,12 +489,47 @@ fightb.addEventListener("click",
 })
 
 
+//Fatalities
+function p1Fat() {
+    if (sPA1 == 3 ) {
+        p1fat.style.display = "initial"
+        p1a1but.style.display = "none"
+        p1a2but.style.display = "none"
+        p1a3but.style.display = "none"
+        p1a4but.style.display = "none"
+        p1a5but.style.display = "none"
+        p2a1but.style.display = "none"
+        p2a2but.style.display = "none"
+        p2a3but.style.display = "none"
+        p2a4but.style.display = "none"
+        p2a5but.style.display = "none"
+
+    }
+}
+
+function p2Fat() {
+    if (sPA2 == 3 ) {
+        p2fat.style.display = "initial"
+        p1a1but.style.display = "none"
+        p1a2but.style.display = "none"
+        p1a3but.style.display = "none"
+        p1a4but.style.display = "none"
+        p1a5but.style.display = "none"
+        p2a1but.style.display = "none"
+        p2a2but.style.display = "none"
+        p2a3but.style.display = "none"
+        p2a4but.style.display = "none"
+        p2a5but.style.display = "none"
+
+    }
+}
+//  Attack animations
 function animatedP1() {
-    console.log("testanimation")
+    
     if (player1Attack == 0) {
         player1Sprite.src = p1A1img
         p1aa1 = setTimeout(p1returnNormal,5000)
-        console.log("animatetest")
+        
     } else if (player1Attack == 1) {
         player1Sprite.src = p1A2img
         p1aa2 = setTimeout(p1returnNormal,1500)
@@ -465,11 +546,11 @@ function animatedP1() {
 }
 
 function animatedP2() {
-    console.log("testanimation")
+    
     if (player2Attack == 0) {
         player2Sprite.src = p2A1img
         p2aa1 = setTimeout(p2returnNormal,4000)
-        console.log("animatetest")
+        
     } else if (player2Attack == 1) {
         player2Sprite.src = p2A2img
         p2aa2 = setTimeout(p2returnNormal,1500)
@@ -489,12 +570,12 @@ function animatedP2() {
 function p2healhb () {
     if (p2Health == 75) { 
     health2img.src = health75
-    console.log("Healthbarworks")
+    
     } else if (p2Health == 50) {
         health2img.src = health50
     } else if (p2Health == 25) {
         health2img.src = health25
-        console.log("healthat25")
+        
     } else if (p2Health == 0) {
         health2img.src = health0
         document.getElementsByClassName("fightb").disabled = true
@@ -505,7 +586,7 @@ function p2healhb () {
 function p1healhb () {
     if (p1Health == 75) { 
     health1img.src = health75
-    console.log("player1Healthbarworks")
+    
     } else if (p1Health == 50) {
         health1img.src = health50
     } else if (p1Health == 25) {
@@ -513,7 +594,7 @@ function p1healhb () {
         
     } else if (p1Health == 0) {
         health1img.src = health0
-        console.log("p1health0")
+        
     }}
     
     function onHitp1 () {
@@ -522,6 +603,10 @@ function p1healhb () {
             player1Sprite.src = p1hit
             animatedP2()
             setTimeout(p1returnNormal,1000);
+            sPA1 = 0
+            sPA2 = sPA2+1
+            p2Fat()
+            console.log("player 2 speacial at " + sPA2 + " player one at " + sPA1)
         }   else if (p1Health == 0) {
             player1Sprite.src = p1LoseSprite
             player2Sprite.src = p2WinSprite
@@ -538,11 +623,14 @@ function p1healhb () {
                 player2Sprite.src = p2hit
                 animatedP1()
                 setTimeout(p2returnNormal,1000);
+                sPA2 = 0
+                sPA1 = sPA1+1
+                p1Fat()
+                console.log("player 1 special at " + sPA1 + " player two at " + sPA2)
             }   else if (p2Health == 0) {
                 player2Sprite.src = p2LoseSprite
                 player1Sprite.src = p1WinSprite
                 document.querySelector("#status").innerHTML = "Player 1 Wins!!!"  
-                
                 
             }
         }
@@ -562,6 +650,8 @@ function resetHealth () {
     p2Health = 100
     health1img.src = health100
     health2img.src = health100
+    p1fat = 0
+    p2fat = 0
 }
 
 

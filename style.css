@@ -12,7 +12,7 @@ body {
     display: grid;
     align-items: center;
     justify-items: center;
-    grid-template-rows: 15% 30% 50% 10% 10%;
+    grid-template-rows: 10% 25% 50% 5% 5%;
     /* grid-template-columns: 40% 20% 40%; */
     grid-template-areas:     
     "p1health    title       p2health  "
