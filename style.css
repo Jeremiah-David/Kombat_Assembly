@@ -28,9 +28,6 @@ body {
     background-size: cover;
 }
 
-button {
-    padding: 10px
-}
 
 
 .status {
@@ -68,6 +65,7 @@ h1 {
     border-radius: 10%;
     border-width: 10px;
     border-style: double;
+    background-image: url("images/fireworks.gif");
 }
 .fight {
     grid-area: fight;
@@ -172,13 +170,17 @@ button {
     }
 
 .button {
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+        align-items: center;
         border-top: 1px solid #000000;
         background: #000000;
         background: -webkit-gradient(linear, left top, left bottom, from(#ff0000), to(#000000));
-        background: -webkit-linear-gradient(top, #ff0000, #000000);
+        /* background: -webkit-linear-gradient(top, #ff0000, #000000);
         background: -moz-linear-gradient(top, #ff0000, #000000);
         background: -ms-linear-gradient(top, #ff0000, #000000);
-        background: -o-linear-gradient(top, #ff0000, #000000);
+        background: -o-linear-gradient(top, #ff0000, #000000); */
         padding: 11px 22px;
         -webkit-border-radius: 40px;
         -moz-border-radius: 40px;
@@ -192,6 +194,7 @@ button {
         font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
         text-decoration: none;
         vertical-align: middle;
+        
         }
 .button:hover {
         border-top-color: #000000;
@@ -202,3 +205,10 @@ button {
         border-top-color: #1b435e;
         background: #1b435e;
         }
+
+.secret {
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+}
