@@ -8,8 +8,8 @@ Take control of the Cat, (or the Cat and the Temple CareTaker in 2 player mode),
 Every round each fighter picks an attack. Then the fight button is hit. They collide in the fight, and you are told the winner. The loser loses some life, and when a fighter is out of health they lose. The winner owns the temple after...until the next fight!!
 
 
-Play Game
-https://kombatassembly.netlify.app
+[Play Game]
+(https://kombatassembly.netlify.app)
 
 
 
