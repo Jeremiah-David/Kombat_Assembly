@@ -9,17 +9,17 @@ let player2Game = document.querySelector(".player2Game")
 let computer = document.querySelector(".computer")
 let p2controls = document.querySelector(".p2controls")
 let p1controls = document.querySelector(".p1controls")
-const p1Stand = "images/cat/felicia-gem-run.gif";
+let p1Stand = "images/cat/felicia-gem-run.gif"
 let p1hit = "images/cat/felicia-gem-dizzy.gif"
 let player1Sprite =document.getElementById("p1Sprite");
 let health1image =document.querySelector(".p1Health")
-let p1bar = "/home/jj/Desktop/general_assembly/FightTurn!/images/healthbar.png"
-const p2Stand = "images/Chunlie/chunchill.gif";
+let p1bar = "/home/jj/Desktop/general_assembly/FightTurn!/images/healthbar.png" 
+let p2Stand = "images/Chunlie/chunchill.gif"
 let p2hit = "images/Chunlie/chunli-gem-dizzy.gif"
-let player2Sprite =document.getElementById("p2Sprite");
+let player2Sprite =document.getElementById("p2Sprite")
 let health1img =document.querySelector(".p1Healthimg")
 let health2img =document.querySelector(".p2Healthimg")
-let p2bar = "/home/jj/Desktop/general_assembly/FightTurn!/images/healthbar.png"
+let p2bar = "/home/jj/Desktop/general_assembly/FightTurn!/images/healthbar.png" 
 // let p1A1 = document.querySelector("#p1a1button") 
 //my buttons player 1
 let p1A1img = "images/cat/felicia-gem-specialcombo4.gif"
@@ -27,11 +27,11 @@ let p1a1but = document.querySelector("#p1a1button")
 let p1A2img =  "images/cat/felicia-goldhammer.gif"
 let p1a2but = document.querySelector("#p1a2button")
 let p1A3img = "images/cat/felicia-megaman.gif"
-let p1a3but = document.querySelector("#p1a3button")
+let p1a3but = document.querySelector("#p1a3button") 
 let p1A4img =  "images/cat/felicia-rolling.gif"
-let p1a4but = document.querySelector("#p1a4button")
+let p1a4but = document.querySelector("#p1a4button") 
 let p1A5img =  "images/cat/multicat.gif"
-let p1a5but = document.querySelector("#p1a5button")
+let p1a5but = document.querySelector("#p1a5button") 
 let p1WinSprite = "images/cat/felicatransform.gif"
 let p2WinSprite ="images/Chunlie/chunWIN.gif"
 let p1LoseSprite = "images/cat/felicia-kittybox.gif"
@@ -46,15 +46,15 @@ let p2fat = document.querySelector("#p2fbutton")
 //player 2 buttons
 
 let p2A1img = "images/Chunlie/chunball2.gif"
-let p2a1but = document.querySelector("#p2a1button")
-let p2A2img =  "images/Chunlie/chunfireball4.gif"
-let p2a2but = document.querySelector("#p2a2button")
+let p2a1but = document.querySelector("#p2a1button") 
+let p2A2img =  "images/Chunlie/chunfireball4.gif" 
+let p2a2but = document.querySelector("#p2a2button") 
 let p2A3img = "images/Chunlie/chungGun3.gif"
-let p2a3but = document.querySelector("#p2a3button")
-let p2A4img =  "images/Chunlie/chunli-gem-stomp.gif"
-let p2a4but = document.querySelector("#p2a4button")
-let p2A5img =  "images/Chunlie/chunSpin1.gif"
-let p2a5but = document.querySelector("#p2a5button")
+let p2a3but = document.querySelector("#p2a3button") 
+let p2A4img =  "images/Chunlie/chunli-gem-stomp.gif" 
+let p2a4but = document.querySelector("#p2a4button") 
+let p2A5img =  "images/Chunlie/chunSpin1.gif" 
+let p2a5but = document.querySelector("#p2a5button") 
 // Fight button!!!
 let fightb = document.querySelector(".fightb")
 // Health
@@ -159,6 +159,7 @@ function gamestart () {
     p2fat.style.display = "none"
     p1fat.style.display = "none"
     secretArea.style.display = "none"
+    
     // p2controls.style.display = "none"
 }
 
@@ -196,6 +197,7 @@ computer.addEventListener("click", () => {
     p1a3but.style.display = "initial"
     p1a4but.style.display = "initial"
     p1a5but.style.display = "initial"
+    
     // p1controls.style.display = "initial"
     // p1fat.style.display = "none"
     
@@ -211,6 +213,7 @@ computer.addEventListener("click", () => {
     
 
 })
+
 
 player2Game.addEventListener("click", () => {
     

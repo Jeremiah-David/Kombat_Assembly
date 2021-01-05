@@ -13,7 +13,7 @@ body {
     align-items: center;
     justify-items: center;
     grid-template-rows: 10% 25% 50% 5% 5%;
-    /* grid-template-columns: 40% 20% 40%; */
+    /* grid-template-columns: 40% 20px 40%; */
     grid-template-areas:     
     "p1health    title       p2health  "
     "p1controls  fight       p2controls"
@@ -23,7 +23,7 @@ body {
     
 
     
-    background-image: url(images/animated-gifs-of-fighting-game-backgrounds-46.gif);
+    background-image: url(images/animated-gifs-of-fighting-game-backgrounds-45.gif);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -211,4 +211,7 @@ button {
     align-content: center;
     justify-items: center;
     align-items: center;
+}
+
+
 }
