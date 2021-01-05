@@ -174,9 +174,9 @@ computer.addEventListener("click", () => {
     // p1fat.style.display = "none"
     
     
-    fightb.style.display = "initial"
-    p2a1but.style.display = "initial"
-    p2a2but.style.display = "initialgit "
+  
+    p2a1but.style.display = "none"
+    p2a2but.style.display = "none"
     p2a3but.style.display = "none"
     p2a4but.style.display = "none"
     p2a5but.style.display = "none"
@@ -196,14 +196,14 @@ player2Game.addEventListener("click", () => {
     p1a3but.style.display = "initial"
     p1a4but.style.display = "initial"
     p1a5but.style.display = "initial"
-    p2a1but.style.display = "initial"
-    p2a2but.style.display = "initial"
-    p2a3but.style.display = "initial"
-    p2a4but.style.display = "initial"
-    p2a5but.style.display = "initial"
+    p2a1but.style.display = "inline-block"
+    p2a2but.style.display = "inline-block"
+    p2a3but.style.display = "inline-block"
+    p2a4but.style.display = "inline-block"
+    p2a5but.style.display = "inline-block"
     // p2fat.style.display = "none"
     // p1fat.style.display = "none"
-    fightb.style.visibility = "visible"
+    // fightb.style.visibility = "visible"
 })
 
 
@@ -213,7 +213,7 @@ let rando
 
 
 function comp() {
-    p2controls.remove() 
+    // p2controls.remove() 
     compMove = true
 }
 
@@ -389,6 +389,9 @@ p2a3but.addEventListener("click", (e) => {
 
 p2a4but.addEventListener("click", (e) => {
     player2Attack = p2a4but.getAttribute("data-value")
+
+
+    
     stopAni11 ()
     stopAni12 ()
     stopAni13 ()
@@ -667,7 +670,9 @@ function resetHealth () {
 
 }
 
-
+function stopAnanimation(animation) {
+    clearTimeout(animation)
+}
 
 // funtions for animation timing
 function stopAni11 () {
