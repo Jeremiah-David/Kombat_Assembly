@@ -111,6 +111,31 @@ let player2 = {
     p2Health: 100,
 }
 
+ //Doom MutherFraker
+let secretCount = 0
+ let secretArea= document.querySelector(".secret")
+function secretActive() {
+    if (secretCount == 4) {
+    fightb.style.display = "none"
+ 
+    p1a1but.style.display = "none"
+    p1a2but.style.display = "none"
+    p1a3but.style.display = "none"
+    p1a4but.style.display = "none"
+    p1a5but.style.display = "none"
+    // p1controls.style.display = "none"
+    p2a1but.style.display = "none"
+    p2a2but.style.display = "none"
+    p2a3but.style.display = "none"
+    p2a4but.style.display = "none"
+    p2a5but.style.display = "none"
+    p2fat.style.display = "none"
+    p1fat.style.display = "none"
+    secretArea.style.display = "initial"
+    // p2controls.style.display = "none"
+}}
+
+
 // Game load start function
 function gamestart () {
     player1Sprite.src = p1Stand
@@ -133,6 +158,7 @@ function gamestart () {
     p2a5but.style.display = "none"
     p2fat.style.display = "none"
     p1fat.style.display = "none"
+    secretArea.style.display = "none"
     // p2controls.style.display = "none"
 }
 
@@ -245,6 +271,7 @@ reset.addEventListener("click", () => {
     sPA2 = 0
     sPA1 = 0
     document.querySelector("#status").innerHTML = "Ready!!!!"  
+    secretCount = 0
     
 
 
@@ -433,67 +460,68 @@ fightb.addEventListener("click",
     
     }
     if (player1Attack == player2Attack) {
-        
-        document.getElementById("status").innerHTML = "Block!!!!"    ;
+        secretCount = secretCount+1
+        secretActive()
+        document.getElementById("status").innerHTML = "Block!!!!"    
     } else if (player1Attack == 0 && player2Attack == 1 ||player1Attack == 0 && player2Attack == 2)  {
         p2Health = p2Health-25 
-        document.getElementById("status").innerHTML = "Player 2 Hit!!!";
+        document.getElementById("status").innerHTML = "Player 2 Hit!!!"
         onHitp2 () 
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 0 && player2Attack == 3 ||player1Attack == 0 && player2Attack == 4)  {
         p1Health = p1Health-25 
-        document.getElementById("status").innerHTML = "Player 1 Hit!!!";
+        document.getElementById("status").innerHTML = "Player 1 Hit!!!"
         onHitp1 ()
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 1 && player2Attack == 2 ||player1Attack == 1 && player2Attack == 3)  {
         p2Health = p2Health-25 
-        document.getElementById("status").innerHTML = "Player 2 Hit!!!";
+        document.getElementById("status").innerHTML = "Player 2 Hit!!!"
         onHitp2 () 
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 1 && player2Attack == 4 ||player1Attack == 1 && player2Attack == 0)  {
         p1Health = p1Health-25 
-        document.getElementById("status").innerHTML = "Player 1 Hit!!!";
+        document.getElementById("status").innerHTML = "Player 1 Hit!!!"
         onHitp1 ()
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 2 && player2Attack == 3 ||player1Attack == 2 && player2Attack == 4)  {
         p2Health = p2Health-25 
-        document.getElementById("status").innerHTML = "Player 2 Hit!!!";
+        document.getElementById("status").innerHTML = "Player 2 Hit!!!"
         onHitp2 () 
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 2 && player2Attack == 0 ||player1Attack == 2 && player2Attack == 1)  {
         
         p1Health = p1Health-25 
-        document.getElementById("status").innerHTML = "Player 1 Hit!!!";
+        document.getElementById("status").innerHTML = "Player 1 Hit!!!"
         onHitp1 ()
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 3 && player2Attack == 4 ||player1Attack == 3 && player2Attack == 0)  {
         p2Health = p2Health-25 
-        document.getElementById("status").innerHTML = "Player 2 Hit!!!";
+        document.getElementById("status").innerHTML = "Player 2 Hit!!!"
         onHitp2 () 
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 3 && player2Attack == 1 ||player1Attack == 3 && player2Attack == 2)  {
         p1Health = p1Health-25 
-        document.getElementById("status").innerHTML = "Player 1 Hit!!!";
+        document.getElementById("status").innerHTML = "Player 1 Hit!!!"
         onHitp1 ()
         onHitp2 () 
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 4 && player2Attack == 0 ||player1Attack == 4 && player2Attack == 1)  {
         p2Health = p2Health-25 
-        document.getElementById("status").innerHTML = "Player 2 Hit!!!";
+        document.getElementById("status").innerHTML = "Player 2 Hit!!!"
         onHitp2 () 
         p2healhb ()
         p1healhb ()
     } else if (player1Attack == 4 && player2Attack == 2 ||player1Attack == 4 && player2Attack == 3)  {
         p1Health = p1Health-25 
-        document.getElementById("status").innerHTML = "Player 1 Hit!!!";
+        document.getElementById("status").innerHTML = "Player 1 Hit!!!"
         onHitp1 ()
         p2healhb ()
         p1healhb ()
@@ -719,8 +747,3 @@ function roundCount () {
 
 
 gamestart ()
-
-
-//animations as functions
-
-//Switch statements

@@ -1,0 +1,191 @@
+
+
+
+<html>
+
+<head>
+	
+   <!-- page title -->
+   <title>Doom Archive Download</title>
+   
+   <!-- css link -->
+   <link rel="stylesheet" type="text/css" href="./style.css">
+
+   <!-- ypSlideOutMenus script include -->
+   <script language="javascript" src="./scripts/ypSlideOutMenus.js"></script>
+
+   <!-- menu defs -->
+   <script language="javascript">
+			//                               ** slide dir, left, top, width, height **
+           var menus = [
+            new ypSlideOutMenu("Doom1Menu",		"down", 255+62, 152, 210, 104),
+            new ypSlideOutMenu("Doom2Menu",		"down", 337+62, 152, 210, 104),
+            new ypSlideOutMenu("ResourcesMenu",	"down", 416+62, 152, 210, 87),
+            /*new ypSlideOutMenu("AboutDoomMenu",	"down", 518+62, 152, 210, 53),*/
+            // new ypSlideOutMenu("SiteMenu",		"down", 630+62, 152, 210, 53),
+            new ypSlideOutMenu("SiteMenu",		"down", 575, 152, 210, 53),
+        ]
+
+        /*
+        for (var i = 0; i < menus.length; i++) {
+            menus[i].onactivate = new Function("document.getElementById('act" + i + "').className='MenuBarLink';");
+            menus[i].ondeactivate = new Function("document.getElementById('act" + i + "').className='';");
+        }
+        */
+    </script>
+
+    
+</head>
+
+<body>
+
+
+	<table width="780" height="160" background="./images/banner.jpg" border="0" cellspacing="0" cellpadding="0">
+	<tr height="120">
+		<td colspan="2">&nbsp;</td>
+	</tr>
+	<tr height="40">
+		<td width="250">&nbsp;</td>
+		
+		<!-- menu cell -->
+		<td valign="center" class="MenuBar" width="530" valign="top">
+			<a class="MenuBarLink" href="./">Home</a>
+			&nbsp;&nbsp;&nbsp;
+			<a class="MenuBarLink" href="./doom1/" onmouseover="ypSlideOutMenu.showMenu('Doom1Menu')" onmouseout="ypSlideOutMenu.hideMenu('Doom1Menu')">Doom 1</a>
+			&nbsp;&nbsp;&nbsp;
+			<a class="MenuBarLink" href="./doom2/" onmouseover="ypSlideOutMenu.showMenu('Doom2Menu')" onmouseout="ypSlideOutMenu.hideMenu('Doom2Menu')">Doom 2</a>
+			&nbsp;&nbsp;&nbsp;
+			<a class="MenuBarLink" href="./resources/" onmouseover="ypSlideOutMenu.showMenu('ResourcesMenu')" onmouseout="ypSlideOutMenu.hideMenu('ResourcesMenu')">Resources</a>
+			&nbsp;&nbsp;&nbsp;
+			<!--<a class="MenuBarLink" href="./AboutDoom/" onmouseover="ypSlideOutMenu.showMenu('AboutDoomMenu')" onmouseout="ypSlideOutMenu.hideMenu('AboutDoomMenu')">About Doom</a>
+			&nbsp;&nbsp;&nbsp;-->
+			<a class="MenuBarLink" href="./AboutUs/" onmouseover="ypSlideOutMenu.showMenu('SiteMenu')" onmouseout="ypSlideOutMenu.hideMenu('SiteMenu')">About Us</a>
+		</td>
+		<!-- end menu cell -->
+		
+	</tr>
+	</table>
+		
+	<!-- ********************************************************************************************* -->
+	
+	<!-- doom 1 menu div -->
+	<div id="Doom1MenuContainer">
+	     <div id="Doom1MenuContent" class="menu">
+			<a href="./ListFiles.asp?FolderId=17">Single Player/Coop Wads</a>
+			<a href="./ListFiles.asp?FolderId=18">Deathmatch Wads</a>
+			<a href="./ListFiles.asp?FolderId=24">Megawads and TCs</a>
+			<a href="./ListFiles.asp?FolderId=47">Mods</a>
+			<a href="./ListFiles.asp?FolderId=48">Dehacked Patches</a>
+			<a href="./ListFiles.asp?FolderId=26">Editors and Utilities</a>
+		</div>
+	</div>
+
+	 <!-- doom 2 menu div -->
+	<div id="Doom2MenuContainer">
+	     <div id="Doom2MenuContent" class="menu">
+			<a href="./ListFiles.asp?FolderId=45">Single Player/Coop Wads</a>
+			<a href="./ListFiles.asp?FolderId=44">Deathmatch Wads</a>
+			<a href="./ListFiles.asp?FolderId=25">Megawads and TCs</a>
+			<a href="./ListFiles.asp?FolderId=49">Mods</a>
+			<a href="./ListFiles.asp?FolderId=50">Dehacked Patches</a>
+			<a href="./ListFiles.asp?FolderId=46">Editors and Utilities</a>
+	     </div>
+	</div>
+
+	<!-- resources menu div -->
+	<div id="ResourcesMenuContainer">
+	     <div id="ResourcesMenuContent" class="menu">
+			<a href="./ListFiles.asp?FolderId=51">Doom 1 Resources</a>
+			<a href="./ListFiles.asp?FolderId=216&ContentsFolderId=216">Doom Shareware</a>
+			<a href="./ListFiles.asp?FolderId=214&ContentsFolderId=214">Doom Alphas</a>
+			<a href="./ListFiles.asp?FolderId=215&ContentsFolderId=215">Doom Betas</a>
+			<a href="./ListFiles.asp?FolderId=46">Doom 2 Resources</a>
+	     </div>
+	</div>
+
+	<!-- about doom menu div -->
+	<!--<div id="AboutDoomMenuContainer">
+	     <div id="AboutDoomMenuContent" class="menu">
+	     </div>
+	</div>-->
+
+	<!-- site menu div -->
+	<div id="SiteMenuContainer">
+	     <div id="SiteMenuContent" class="menu">
+			<a href="./AboutUs/about.asp">About The Doom Archive</a>
+			<a href="./AboutUs/links.asp">Doom Archive Links</a>
+			<a href="./AboutUs/contact.asp">Contact Us</a>
+	     </div>
+	</div>
+	<!-- ********************************************************************************************* -->
+				
+	<!-- start content cell -->
+	<table align="left" height="100%" width="780" border="0" cellspacing="0" cellpadding="10">
+	<tr>
+		<td bgcolor="#444444" valign="top">
+		
+			
+			<h2>Doom Archive Download</h2>
+			
+
+
+<!-- page specific content -->
+
+
+
+
+<p>&nbsp;</p>
+<h1>Doom Archive File Download</h1>
+
+<!-- <p align="center"><font size="3"><a href="http://www.jbserver.com/downloads/games/doom/misc/shareware/doom1_0.zip"><img border="0" src="images/icons/Icon_Download.gif">&nbsp;Doom Shareware v1.0 (2114 KB)</a></font></p> -->
+
+<p align="center"><font size="3">Doom Shareware v1.0 (2114 KB)</font></p>
+
+<table align="center" border="0" cellspacing="0" cellpadding="4">
+<tr>
+	<td><font size="3"><a href="http://www.jbserver.com/downloads/games/doom/misc/shareware/doom1_0.zip"><img border="0" src="images/icons/downloads.gif">&nbsp;Download from server 1</a></font></td>
+</tr>
+<tr>
+	<td><font size="3"><a href="http://www.jbserver2.com/downloads/games/doom/misc/shareware/doom1_0.zip"><img border="0" src="images/icons/downloads.gif">&nbsp;Download from server 2</a></font></td>
+</tr>
+</table>
+
+
+<p align="center">
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-6944278013308875";
+	google_ad_width = 336;
+	google_ad_height = 280;
+	google_ad_format = "336x280_as";
+	google_ad_type = "text_image";
+	google_ad_channel ="";
+	google_color_border = "444444";
+	google_color_bg = "444444";
+	google_color_link = "CC9900";
+	google_color_text = "FFFFFF";
+	google_color_url = "CC9900";
+	//--></script>
+	<script type="text/javascript"
+	  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script>
+</p>
+
+<p align="center"><a href="javascript:history.back(1);">Back</a></p>
+
+<hr>
+
+
+		</td>
+		
+		<!--
+		<td width="400" valign="top">
+            <div id='vu_ytplayer_vjVQa1PpcFMQ-rwIGYnAE4mmq2GiB-lnQU2u-eCttlE='><a href='http://www.youtube.com/browse'>Watch the latest videos on YouTube.com</a></div><script type='text/javascript' src='http://www.youtube.com/cp/vjVQa1PpcFMQ-rwIGYnAE4mmq2GiB-lnQU2u-eCttlE='></script>		
+		</td>
+		-->
+	</tr>
+	</table>
+	
+
+</body>
+
+</html>
